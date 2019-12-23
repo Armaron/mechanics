@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mech_server", "mech_server\mech_server.csproj", "{968E0FBF-86BA-4552-BCA7-56C3E62F8E5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mechanic_client", "mechanic_client\mechanic_client.csproj", "{4A19CFB6-2868-4137-B0C9-6BE5E7E511DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{968E0FBF-86BA-4552-BCA7-56C3E62F8E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968E0FBF-86BA-4552-BCA7-56C3E62F8E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968E0FBF-86BA-4552-BCA7-56C3E62F8E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968E0FBF-86BA-4552-BCA7-56C3E62F8E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A19CFB6-2868-4137-B0C9-6BE5E7E511DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A19CFB6-2868-4137-B0C9-6BE5E7E511DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A19CFB6-2868-4137-B0C9-6BE5E7E511DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A19CFB6-2868-4137-B0C9-6BE5E7E511DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1E2C306-96B3-498E-AFDB-01BCB56CB62D}
+	EndGlobalSection
+EndGlobal

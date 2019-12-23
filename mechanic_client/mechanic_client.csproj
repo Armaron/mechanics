@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="KeyManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\rage\dotnet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="rage-sharp">
+      <HintPath>..\..\..\..\rage\dotnet\rage-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="VehicleDetailsCl.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="del &quot;C:\rage_dev\server-files\client_packages\cs_packages\mechanic_client.cs&quot; /Q&#xD;&#xA;for /R %25CD%25 %25%25i in (*.cs) do (&#xD;&#xA;	xcopy %25%25i &quot;C:\rage_dev\server-files\client_packages\cs_packages\&quot; /Q /Y /EXCLUDE:exclude.txt&#xD;&#xA;)" />
+  </Target>
+
+</Project>

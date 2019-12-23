@@ -1,0 +1,4 @@
+﻿<meta>
+  <info name="mechanics" type="script"/>
+  <script src="mech_server.dll"/>
+</meta>
