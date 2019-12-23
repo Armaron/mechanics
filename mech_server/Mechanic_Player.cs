@@ -85,8 +85,8 @@ namespace mechanics
         {
             Vehicle veh = (Vehicle)args[0];
             int bodyH = Convert.ToInt32(args[1].ToString());
-            veh.SetSharedData("targetVehicleFixBody", "fixEng");
-            NAPI.ClientEvent.TriggerClientEventForAll("syncFixEng", bodyH);
+            veh.SetSharedData("targetVehicleFixBody", "fixBody");
+            NAPI.ClientEvent.TriggerClientEventForAll("syncFixBody", bodyH);
             veh.ResetSharedData("targetVehicleFixBody");
         }
 
@@ -95,8 +95,8 @@ namespace mechanics
         {
             Vehicle veh = (Vehicle)args[0];
             int EngH = Convert.ToInt32(args[1].ToString());
-            veh.SetSharedData("targetVehicleFixEng", "fixBody");
-            NAPI.ClientEvent.TriggerClientEventForAll("syncFixBody", EngH);
+            veh.SetSharedData("targetVehicleFixEng", "fixEng");
+            NAPI.ClientEvent.TriggerClientEventForAll("SyncFixEng", EngH);
             veh.ResetSharedData("targetVehicleFixEng");
         }
 

@@ -1,6 +1,7 @@
 ﻿using GTANetworkAPI;
 using mech_server;
 using Newtonsoft.Json;
+using Serv_RP.economics;
 using Serv_RP.player;
 using System;
 using System.Collections.Generic;
@@ -474,10 +475,54 @@ namespace mechanics
 
         public static void UpdateCarsCount(Client client, string nameVeh, int price)
         {
+            float heading = client.Heading;
+            Vector3 pos = client.Position;
+            heading *= (float)(Math.PI / 180);
+            pos.X += (float)(3.0f * Math.Sin(-heading));
+            pos.Y += (float)(3.0f * Math.Cos(-heading)); ;
+            string nameVehSpawn = "";
+            switch (nameVeh)
+            {
+                case "Towtruck Large":
+                    nameVehSpawn = "towtruck";
+                    break;
+                case "Vapid Tow Truck":
+                    nameVehSpawn = "towtruck2";
+                    break;
+                case "MTL Flatbed":
+                    nameVehSpawn = "flatbed";
+                    break;
+            }
 
+            NAPI.Chat.SendChatMessageToAll(nameVeh);
             Mech_Buisness mech_buis = mechs_buisness.Find(pl => pl.Name == client.GetData("mechBuisness"));
             mech_buis.TrucksCount = mech_buis.TrucksCount + 1;
+            Serv_RP.vehicles.VehicleModel vehicleModel = new Serv_RP.vehicles.VehicleModel();
+            vehicleModel.OwnerID = client.GetData(Serv_RP.player.PlayerData.PLAYER_ID);
+            vehicleModel.Name = nameVehSpawn;
+            vehicleModel.BodyHealth = 1000;
+            vehicleModel.EngHealth = 1000;
+            Serv_RP.database.DataBase.CarNumber++;
+            vehicleModel.PlateNumber = Serv_RP.database.DataBase.CarNumber.ToString();
+            vehicleModel.Color1 = 0;
+            vehicleModel.Color2 = 0;
+            vehicleModel.FuelLevel = 100;
+            vehicleModel.pos = pos;
+            vehicleModel.rot = client.Rotation;
+            vehicleModel.Parked = "";
+            vehicleModel.KeyID = ++Serv_RP.database.DataBase.LastKey;
 
+           GameObjectModel GOM = GameObjects.ObjectsList.Find(gom => gom.categoryS == "Key" && gom.hunger == vehicleModel.KeyID);
+           if (GOM == null)
+           {
+               GOM = new GameObjectModel("Key", "Ключ " + vehicleModel.PlateNumber + " " + vehicleModel.KeyID.ToString(), 0, 0.01, false, "0", hunger: vehicleModel.KeyID);
+          
+               GameObjects.ObjectsList.Add(GOM);
+           }
+           ((Inventory)client.GetData(Serv_RP.player.PlayerData.PLAYER_INVENTORY)).SetToInvetoty(GOM.Name, 1, "Автодиллер");
+            Serv_RP.vehicles.VehicleData.CreateVehicle(vehicleModel, false);
+            Serv_RP.database.DataBase.SaveServerState();
+            
         }
         public static void UpdateNameBuis(Client client, string NewNameBuis)
         {
