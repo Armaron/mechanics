@@ -51,53 +51,102 @@ namespace mechanics
 
         }
 
+        //[RemoteEvent("Sync_Window")]
+        //public void SyncWindow(Client client, object[] args)
+        //{
+        //    Vehicle veh = (Vehicle)args[1];
+        //    veh.SetSharedData("targetVehicleFixWindows", "fixWindows");
+        //    int window = Convert.ToInt32(args[0].ToString());
+        //    NAPI.ClientEvent.TriggerClientEventForAll("syncFixWindows", window);
+        //    veh.ResetSharedData("targetVehicleFixWindows");
+        //}
+
         [RemoteEvent("Sync_Window")]
         public void SyncWindow(Client client, object[] args)
         {
-            Vehicle veh = (Vehicle)args[1];
-            veh.SetSharedData("targetVehicleFixWindows", "fixWindows");
-            int window = Convert.ToInt32(args[0].ToString());
-            NAPI.ClientEvent.TriggerClientEventForAll("syncFixWindows", window);
-            veh.ResetSharedData("targetVehicleFixWindows");
+            Vehicle veh = (Vehicle)args[0];
+            //veh.SetSharedData("targetVehicleFixWindows", "fixWindows");
+            int window = Convert.ToInt32(args[1].ToString());
+            NAPI.ClientEvent.TriggerClientEventForAll("syncFixWindows",veh, window);
+           // veh.ResetSharedData("targetVehicleFixWindows");
         }
+
+        //[RemoteEvent("Sync_BodyShell")]
+        //public void SyncBodyShell(Client client, object[] args)
+        //{
+        //    Vehicle veh = (Vehicle)args[0];
+        //    veh.SetSharedData("targetVehicleFixBodyShell", "fixBodyShell");
+        //    NAPI.ClientEvent.TriggerClientEventForAll("syncFixBodyShell");
+        //    veh.ResetSharedData("targetVehicleFixBodyShell");
+        //}
 
         [RemoteEvent("Sync_BodyShell")]
         public void SyncBodyShell(Client client, object[] args)
         {
             Vehicle veh = (Vehicle)args[0];
-            veh.SetSharedData("targetVehicleFixBodyShell", "fixBodyShell");
-            NAPI.ClientEvent.TriggerClientEventForAll("syncFixBodyShell");
-            veh.ResetSharedData("targetVehicleFixBodyShell");
+           // veh.SetSharedData("targetVehicleFixBodyShell", "fixBodyShell");
+            NAPI.ClientEvent.TriggerClientEventForAll("syncFixBodyShell", veh);
+            //veh.ResetSharedData("targetVehicleFixBodyShell");
         }
+
+        //[RemoteEvent("Sync_Wheel")]
+        //public void SyncWheel(Client client, object[] args)
+        //{
+        //    Vehicle veh = (Vehicle)args[1];
+        //    veh.SetSharedData("targetVehicleFixWheel", "fixWheel");
+        //    int wheel = Convert.ToInt32(args[0].ToString());
+        //    NAPI.ClientEvent.TriggerClientEventForAll("syncFixWheels", wheel);
+        //    veh.ResetSharedData("targetVehicleFixWheel");
+        //}
 
         [RemoteEvent("Sync_Wheel")]
         public void SyncWheel(Client client, object[] args)
         {
-            Vehicle veh = (Vehicle)args[1];
-            veh.SetSharedData("targetVehicleFixWheel", "fixWheel");
-            int wheel = Convert.ToInt32(args[0].ToString());
-            NAPI.ClientEvent.TriggerClientEventForAll("syncFixWheels", wheel);
-            veh.ResetSharedData("targetVehicleFixWheel");
+            Vehicle veh = (Vehicle)args[0];
+            //veh.SetSharedData("targetVehicleFixWheel", "fixWheel");
+            int wheel = Convert.ToInt32(args[1].ToString());
+            NAPI.ClientEvent.TriggerClientEventForAll("syncFixWheels",veh, wheel);
+            //veh.ResetSharedData("targetVehicleFixWheel");
         }
+
+        //[RemoteEvent("Sync_Body")]
+        //public void SyncBody(Client client, object[] args)
+        //{
+        //    Vehicle veh = (Vehicle)args[0];
+        //    int bodyH = Convert.ToInt32(args[1].ToString());
+        //    veh.SetSharedData("targetVehicleFixBody", "fixBody");
+        //    NAPI.ClientEvent.TriggerClientEventForAll("syncFixBody", bodyH);
+        //    veh.ResetSharedData("targetVehicleFixBody");
+        //}
 
         [RemoteEvent("Sync_Body")]
         public void SyncBody(Client client, object[] args)
         {
             Vehicle veh = (Vehicle)args[0];
             int bodyH = Convert.ToInt32(args[1].ToString());
-            veh.SetSharedData("targetVehicleFixBody", "fixBody");
-            NAPI.ClientEvent.TriggerClientEventForAll("syncFixBody", bodyH);
-            veh.ResetSharedData("targetVehicleFixBody");
+            //veh.SetSharedData("targetVehicleFixBody", "fixBody");
+            NAPI.ClientEvent.TriggerClientEventForAll("syncFixBody",veh, bodyH);
+            //veh.ResetSharedData("targetVehicleFixBody");
         }
+
+        //[RemoteEvent("Sync_Eng")]
+        //public void SyncEng(Client client, object[] args)
+        //{
+        //    Vehicle veh = (Vehicle)args[0];
+        //    int EngH = Convert.ToInt32(args[1].ToString());
+        //    veh.SetSharedData("targetVehicleFixEng", "fixEng");
+        //    NAPI.ClientEvent.TriggerClientEventForAll("SyncFixEng", EngH);
+        //    veh.ResetSharedData("targetVehicleFixEng");
+        //}
 
         [RemoteEvent("Sync_Eng")]
         public void SyncEng(Client client, object[] args)
         {
             Vehicle veh = (Vehicle)args[0];
             int EngH = Convert.ToInt32(args[1].ToString());
-            veh.SetSharedData("targetVehicleFixEng", "fixEng");
-            NAPI.ClientEvent.TriggerClientEventForAll("SyncFixEng", EngH);
-            veh.ResetSharedData("targetVehicleFixEng");
+            //veh.SetSharedData("targetVehicleFixEng", "fixEng");
+            NAPI.ClientEvent.TriggerClientEventForAll("syncFixEng",veh, EngH);
+           // veh.ResetSharedData("targetVehicleFixEng");
         }
 
         [RemoteEvent("Add_New_Buisness")]
@@ -178,7 +227,21 @@ namespace mechanics
             NAPI.ClientEvent.TriggerClientEvent(player, "LoadVehicleRecord", v.CarNumber, v.SellDate, v.CarType, v.CarScore, v.DateOf, v.DoneWorks);
         }
 
+
+        [RemoteEvent("ServiceBook")]
+        public void ServiceBook(Client client, object[] args)
+        {
+
+            VehicleDetails v = Mechanic.LoadServiceRecord(client, args[0].ToString(), "1231231");
+
+            // NAPI.Chat.SendChatMessageToAll(v.TotalHealth.ToString());
+
+            NAPI.ClientEvent.TriggerClientEvent(client, "LoadVehicleRecord", v.CarNumber, v.SellDate, v.CarType, v.CarScore, v.DateOf, v.DoneWorks);
+        }
+
+
         [RemoteEvent("Sync_Event_Detach")]
+
         public void Event_Sync_Detch(Client client, object[] args)
         {
             Vehicle veh1 = (Vehicle)args[0];
@@ -355,37 +418,35 @@ namespace mechanics
         }
 
         //test
-        private Vector3 XyInFrontOfPos(Vector3 pos, float heading, float dist)
-        {
-            heading *= (float)(Math.PI / 180);
-            pos.X += (float)(dist * Math.Sin(-heading));
-            pos.Y += (float)(dist * Math.Cos(-heading)); ;
-            return pos;
-        }
-
-        [Command("spaw", "vehicle", SensitiveInfo = true, GreedyArg = true)]
-        public void SpawnVehicle(Client player, string vehicle)
-        {
-            SpawnVeh(player, vehicle);
-       
-        }
-
-        //test
-        private void SpawnVeh(Client client, string vehicle)
-        {
-            Vector3 pos = XyInFrontOfPos(client.Position, client.Heading, 3.0f);
-
-            Vehicle myVeh1 = NAPI.Vehicle.CreateVehicle(NAPI.Util.GetHashKey(vehicle), pos, 0f, 0, 0, numberPlate: "aaa1");
-            if (myVeh1 != null)
-            {
-       
-                myVeh1.Repair();
-                myVeh1.Position = pos;
-                myVeh1.Dimension = client.Dimension;
-       
-       
-                //  client.SetIntoVehicle(myVeh1, -1);
-            }
-        }
+       // private Vector3 XyInFrontOfPos(Vector3 pos, float heading, float dist)
+       // {
+       //     heading *= (float)(Math.PI / 180);
+       //     pos.X += (float)(dist * Math.Sin(-heading));
+       //     pos.Y += (float)(dist * Math.Cos(-heading)); ;
+       //     return pos;
+       // }
+       //
+       // [Command("spaw", "vehicle", SensitiveInfo = true, GreedyArg = true)]
+       // public void SpawnVehicle(Client player, string vehicle)
+       // {
+       //     SpawnVeh(player, vehicle);
+       //
+       // }
+       //
+       // //test
+       // private void SpawnVeh(Client client, string vehicle)
+       // {
+       //     Vector3 pos = XyInFrontOfPos(client.Position, client.Heading, 3.0f);
+       //
+       //     Vehicle myVeh1 = NAPI.Vehicle.CreateVehicle(NAPI.Util.GetHashKey(vehicle), pos, 0f, 0, 0, numberPlate: "aaa1");
+       //     if (myVeh1 != null)
+       //     {
+       //
+       //         myVeh1.Repair();
+       //         myVeh1.Position = pos;
+       //         myVeh1.Dimension = client.Dimension;
+       //
+       //     }
+        //}
     }
 }

@@ -1,0 +1,154 @@
+﻿using RAGE;
+using RAGE.Elements;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace cs_packages.player
+{
+    class DrawInfo : Events.Script
+    {
+
+
+
+        public static void Draw(List<RAGE.Events.TickNametagData> nametags)
+        {
+          
+            if (nametags != null)
+                
+                foreach (RAGE.Events.TickNametagData nametagData in nametags)
+                {
+                   // nametagData.Player.SetData<bool>("Draw", false);
+                    //    RAGE.Game.Graphics.DrawSprite("cross", "circle_checkpoints_cross", nametagData.ScreenX, nametagData.ScreenY, 0.1f, 0.1f, 0f, 255, 255, 255, 255, 0);
+                    //RAGE.Elements.Player.LocalPlayer
+                    // RAGE.Game.Natives.NetworkIsGamerTalking(nametagData.Player);
+                    
+                            for (int i=0; i< PlayerState.Friends.Count;i++)
+                      
+                            {
+                                if ((int)nametagData.Player.GetSharedData("ClientID") == PlayerState.Friends[i].ID)
+                                {
+                                
+                                string output = PlayerState.Friends[i].Name + " " + PlayerState.Friends[i].ID.ToString();
+
+                                    RAGE.Game.UIText.Draw(output, new System.Drawing.Point((int)(RAGE.NUI.Game.ScreenResolution.Width * nametagData.ScreenX), (int)(RAGE.NUI.Game.ScreenResolution.Height * nametagData.ScreenY)), 1f, System.Drawing.Color.White, RAGE.Game.Font.ChaletLondon, true);
+
+                                }
+                            }
+                     
+
+
+                    //if ((bool)nametagData.Player.GetSharedData("ClientUsePhone"))
+                    //{
+
+
+
+                    //    //RAGE.Game.Mobile.CreateMobilePhone(0);
+                    //    //RAGE.Game.Mobile.ScriptIsMovingMobilePhoneOffscreen(false);
+                    //    //RAGE.Game.Mobile.SetMobilePhonePosition(0, 0, 0);
+                    //}
+                    //if ((bool)nametagData.Player.GetSharedData("ClientCallPhone"))
+                    //{
+
+
+
+                    //    //RAGE.Game.Mobile.CreateMobilePhone(0);
+                    //    //RAGE.Game.Mobile.ScriptIsMovingMobilePhoneOffscreen(false);
+                    //    //RAGE.Game.Mobile.SetMobilePhonePosition(0, 0, 0);
+                    //}
+
+
+                    if (PlayerState.IDEnabled)
+                        {
+
+                            // Chat.Output("ID");
+                            // RAGE.Game.UIText.Draw(nametagData.Player.GetData<string>("ID"), new System.Drawing.Point(nametagData.ScreenX, nametagData.ScreenY), 0.5f, System.Drawing.Color.GreenYellow, RAGE.Game.Font.Monospace, true);
+                            //     RAGE.Game.Graphics.DrawDebugText("ХУЙ", nametagData.ScreenX, nametagData.ScreenY, 1f, 255, 255, 255, 255);
+
+                            // RAGE.Game.Graphics.DrawSprite("cross", "circle_checkpoints_cross", nametagData.ScreenX, nametagData.ScreenY, 0.1f, 0.1f, 0f, 255, 255, 255, 255, 0);
+
+                            //var formattedName = nametagData.Player.Name.Replace("_", " ");
+                            string outp = nametagData.Player.GetSharedData("ClientID").ToString();
+                            //var output = $"{formattedName}({nametagData.Player.RemoteId})";
+                            RAGE.Game.UIText.Draw(outp, new System.Drawing.Point((int)(RAGE.NUI.Game.ScreenResolution.Width * nametagData.ScreenX), (int)(RAGE.NUI.Game.ScreenResolution.Height * nametagData.ScreenY)), 1.0f, System.Drawing.Color.White, RAGE.Game.Font.ChaletLondon, true);
+
+                            //  RAGE.NUI.UIResText.Draw("ХУЙ", 0, 0, RAGE.Game.Font.ChaletComprimeCologne, 0.3f, System.Drawing.Color.Aqua, RAGE.NUI.UIResText.Alignment.Centered, false, false, 0);
+
+
+                            //    RAGE.Game.Graphics.
+                            // RAGE.Game.Graphics.DrawDebugText2d(nametagData.Player.GetData<int>("ID").ToString(), nametagData.ScreenX, nametagData.ScreenY,1f, 255, 255, 255, 255);
+                            //nametagData.Player.name
+                            // //  Chat.Output(nametagData.Player.GetData<int>("ID").ToString());
+                        }
+
+                        
+                            if ((bool)nametagData.Player.GetSharedData("Talk"))
+                            {
+                              //  RAGE.Game.Graphics.DrawSprite("cross", "circle_checkpoints_cross", nametagData.ScreenX, nametagData.ScreenY, 1f, 1f, 0f, 255, 255, 255, 255, 0);
+
+                               RAGE.Game.UIText.Draw("*", new System.Drawing.Point((int)(RAGE.NUI.Game.ScreenResolution.Width * nametagData.ScreenX), (int)(RAGE.NUI.Game.ScreenResolution.Height * nametagData.ScreenY)), 0.5f, System.Drawing.Color.White, RAGE.Game.Font.ChaletLondon, true);
+
+
+
+                                //    RAGE.Game.Graphics.DrawRect(nametagData.ScreenX, nametagData.ScreenY, 0.1f, 0.1f, 255, 255, 255, 255, 0);
+                                if (!nametagData.Player.GetData<bool>("Draw"))
+                                {
+
+
+                               
+
+                                    nametagData.Player.SetData<bool>("Draw", true);
+                                    nametagData.Player.PlayFacialAnim("mic_chatter", "mp_facial");
+
+                                }
+
+                            }
+                            else
+                            {
+                                nametagData.Player.SetData<bool>("Draw", false);
+                                nametagData.Player.PlayFacialAnim("mood_normal_1", "facials@gen_male@variations@normal");
+                            }
+                    if ((bool)nametagData.Player.GetSharedData("Dead"))
+                    {
+                        //  RAGE.Game.Graphics.DrawSprite("cross", "circle_checkpoints_cross", nametagData.ScreenX, nametagData.ScreenY, 1f, 1f, 0f, 255, 255, 255, 255, 0);
+
+                     
+
+
+
+                          
+                        //    nametagData.Player.PlayFacialAnim("mic_chatter", "mp_facial");
+                        ///     nametagData.Player.PlayAnim("lamar_base_idle", "missfra2",8f,true,false,true,1f,1);
+
+
+
+                    }
+                   
+
+
+
+
+
+                    //   if (     RAGE.Game.Invoker.Invoke<bool>(RAGE.Game.Natives.NetworkIsGamerTalking,nametagData.Player))
+                    //    if (nametagData.Player.GetData<bool>("Voice"))
+                    //  RAGE.Game.Graphics.DrawDebugText2d(nametagData.Player.RemoteId.ToString(), nametagData.ScreenX, nametagData.ScreenY,  1, 255, 255, 255, 100);
+                    //  RAGE.Game.Graphics.DrawRect(nametagData.ScreenX, nametagData.ScreenY,0.1f,0.1f, 255, 255, 255, 255,0);
+
+                }
+
+                
+            //foreach (Player player in Entities.Players.All)
+            //{
+
+
+            //    //RAGE.Game.Graphics.DrawDebugText2d(player.Id.ToString(), player.Position.X, player.Position.Y, player.Position.Z + 1, 255, 255, 255, 50);
+            //  //  RAGE.Game.Graphics.DrawSprite("mponmissmarkers", "capture_the_flag_base_icon", 0.5f, 0.5f, 0.1f, 0.1f, 0, 255, 255, 255, 100,0);
+            //    //if(player.GetData<bool>("Voice"))
+            //    //{
+
+            //    //}
+
+            //}
+        }
+
+    }
+}

@@ -40,7 +40,8 @@ namespace mech_server
             client.SetSharedData("mechBuisness", Name);
             client.SetSharedData("typeCustoms", TypeCustoms);
             client.SetSharedData(PlayerData.Fraction, "mechs");
-            
+            client.SetData(PlayerData.Fraction, "mechs");
+
             }
 
         }

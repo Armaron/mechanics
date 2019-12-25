@@ -1,0 +1,76 @@
+
+==================[06.02.2019 9:53:55]==================
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at IEnumerable<TResult> System.Linq.Enumerable.Select<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)
+=========================================================
+
+==================[06.02.2019 10:07:43]==================
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at object RuntimeTypeHandle.CreateInstance(RuntimeType type, bool publicOnly, ref bool canBeCached, ref RuntimeMethodHandleInternal ctor)
+   at object RuntimeType.CreateInstanceSlow(bool publicOnly, bool skipCheckThis, bool fillCache, ref StackCrawlMark stackMark)
+=========================================================
+
+==================[06.02.2019 10:10:36]==================
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at object RuntimeTypeHandle.CreateInstance(RuntimeType type, bool publicOnly, ref bool canBeCached, ref RuntimeMethodHandleInternal ctor)
+   at object RuntimeType.CreateInstanceSlow(bool publicOnly, bool skipCheckThis, bool fillCache, ref StackCrawlMark stackMark)
+=========================================================
+
+==================[06.02.2019 10:41:03]==================
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at IEnumerable<TResult> System.Linq.Enumerable.Select<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)
+=========================================================
+
+==================[06.02.2019 10:41:37]==================
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at IEnumerable<TResult> System.Linq.Enumerable.Select<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)
+=========================================================
+
+==================[06.02.2019 10:47:12]==================
+System.UnauthorizedAccessException: Access to the path 'C:\coord.txt' is denied.
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+=========================================================
+
+==================[06.02.2019 10:47:12]==================
+System.UriFormatException: Invalid URI: The format of the URI could not be determined.
+   at void Uri.CreateThis(string uri, bool dontEscape, UriKind uriKind)
+=========================================================
+
+==================[06.02.2019 10:47:12]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.UnauthorizedAccessException: Access to the path 'C:\coord.txt' is denied.
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at new System.IO.FileStream(string path, FileMode mode, FileAccess access, FileShare share, int bufferSize, FileOptions options)
+   at new System.IO.StreamWriter(string path, bool append, Encoding encoding, int bufferSize)
+   at new System.IO.StreamWriter(string path, bool append)
+   at StreamWriter System.IO.File.CreateText(string path)
+   at void Server_MP.ServerState.SavePoint(Client player) in :line 91
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor)
+   at object System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(object obj, object[] parameters, object[] arguments)
+=========================================================
+
+==================[06.02.2019 10:47:12]==================
+System.UriFormatException: Invalid URI: The format of the URI could not be determined.
+   at void Uri.CreateThis(string uri, bool dontEscape, UriKind uriKind)
+=========================================================
+
+==================[06.02.2019 12:40:34]==================
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at object RuntimeTypeHandle.CreateInstance(RuntimeType type, bool publicOnly, ref bool canBeCached, ref RuntimeMethodHandleInternal ctor)
+   at object RuntimeType.CreateInstanceSlow(bool publicOnly, bool skipCheckThis, bool fillCache, ref StackCrawlMark stackMark)
+=========================================================
+
+==================[06.02.2019 12:41:31]==================
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at object RuntimeTypeHandle.CreateInstance(RuntimeType type, bool publicOnly, ref bool canBeCached, ref RuntimeMethodHandleInternal ctor)
+   at object RuntimeType.CreateInstanceSlow(bool publicOnly, bool skipCheckThis, bool fillCache, ref StackCrawlMark stackMark)
+=========================================================
+
+==================[06.02.2019 13:23:57]==================
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at IEnumerable<TResult> System.Linq.Enumerable.Select<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)
+=========================================================

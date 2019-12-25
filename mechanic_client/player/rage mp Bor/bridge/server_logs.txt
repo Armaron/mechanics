@@ -1,0 +1,1719 @@
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 05.02.2019 11:25:10
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting myresourcename resource..
+-> Error starting myresourcename, meta.xml has not been found.
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 05.02.2019 11:26:30
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting myresourcename resource..
+-> Error starting myresourcename, meta.xml has not been found.
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 05.02.2019 11:29:14
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting myresourcename resource..
+myresourcename: loading scripts.. found 1 script(s)
+myresourcename: compiling scripts..
+myresourcename: instantiating WelcomeMessages..
+myresourcename: loading server events.. found 2 server event(s)
+myresourcename: loaded 2 server events(s)
+-> Resource myresourcename started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 9:53:48
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 1 script(s)
+Server_MP: compiling scripts..
+
+CS0246: The type or namespace name 'ConsoleCommands' could not be found (are you missing a using directive or an assembly reference?)
+       -> ServerState.cs:20
+
+CS0246: The type or namespace name 'ConsoleCommands' could not be found (are you missing a using directive or an assembly reference?)
+       -> ServerState.cs:32
+
+
+-> Error starting Server_MP due compilation error(s).
+Exception message: Value cannot be null.
+Parameter name: source
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 9:54:34
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:07:39
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: instantiating Server_MP.ConsoleCommands..
+-> Error starting 'Server_MP'
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at GTANetworkInternals.GameServer.<InstantiateScripts>d__61.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at GTANetworkInternals.GameServer.StartResource(String resourceName, String parent)
+
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:10:31
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: instantiating Server_MP.ConsoleCommands..
+-> Error starting 'Server_MP'
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at GTANetworkInternals.GameServer.<InstantiateScripts>d__61.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at GTANetworkInternals.GameServer.StartResource(String resourceName, String parent)
+
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:11:01
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+METHOD NOT ACCESSIBLE OR NOT FOUND: myResourceStart
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:14:51
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Запуск сервера...
+ConsoleCommands - запущен
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:20:24
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Запуск сервера...
+ConsoleCommands - запущен
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:21:17
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 1 command(s)
+Server_MP: loaded 1 commands(s)
+Запуск сервера...
+ConsoleCommands - запущен
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:23:46
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 1 command(s)
+Server_MP: loaded 1 commands(s)
+Запуск сервера...
+ConsoleCommands - запущен
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:40:59
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+
+CS0234: The type or namespace name 'Forms' does not exist in the namespace 'System.Windows' (are you missing an assembly reference?)
+       -> ServerState.cs:88
+
+CS0234: The type or namespace name 'Forms' does not exist in the namespace 'System.Windows' (are you missing an assembly reference?)
+       -> ServerState.cs:89
+
+CS0122: 'Thread' is inaccessible due to its protection level
+       -> ServerState.cs:90
+
+
+-> Error starting Server_MP due compilation error(s).
+Exception message: Value cannot be null.
+Parameter name: source
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:41:32
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+
+CS0234: The type or namespace name 'Forms' does not exist in the namespace 'System.Windows' (are you missing an assembly reference?)
+       -> ServerState.cs:88
+
+CS0234: The type or namespace name 'Forms' does not exist in the namespace 'System.Windows' (are you missing an assembly reference?)
+       -> ServerState.cs:89
+
+CS0122: 'Thread' is inaccessible due to its protection level
+       -> ServerState.cs:90
+
+
+-> Error starting Server_MP due compilation error(s).
+Exception message: Value cannot be null.
+Parameter name: source
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:46:36
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+UNHANDLED EXCEPTION IN COMMAND sp FOR RESOURCE Server_MP
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.UnauthorizedAccessException: Access to the path 'C:\coord.txt' is denied.
+   at SafeFileHandle System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at new System.IO.FileStream(string path, FileMode mode, FileAccess access, FileShare share, int bufferSize, FileOptions options)
+   at new System.IO.StreamWriter(string path, bool append, Encoding encoding, int bufferSize)
+   at new System.IO.StreamWriter(string path, bool append)
+   at StreamWriter System.IO.File.CreateText(string path)
+   at void Server_MP.ServerState.SavePoint(Client player) in :line 91
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor)
+   at object System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(object obj, object[] parameters, object[] arguments)
+   at bool GTANetworkInternals.CommandParser.Parse(Client sender, string cmdRaw, string ourcmd, string[] args)
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 10:47:57
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:12:17
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:15:07
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:16:27
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:17:05
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:18:11
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:20:01
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:22:58
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:25:35
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:29:29
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:32:51
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:34:41
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:39:33
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:42:41
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:44:05
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:46:11
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 1 server event(s)
+Server_MP: loaded 1 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:54:56
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 2 server event(s)
+Server_MP: loaded 2 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:55:34
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 2 server event(s)
+Server_MP: loaded 2 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 11:57:13
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 2 server event(s)
+Server_MP: loaded 2 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:06:07
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 2 server event(s)
+Server_MP: loaded 2 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:07:41
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 2 server event(s)
+Server_MP: loaded 2 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:12:45
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 2 server event(s)
+Server_MP: loaded 2 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+[12:16:58][0]WeirdNewbie: t
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:40:29
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: instantiating Server_MP.PlayerState..
+-> Error starting 'Server_MP'
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at GTANetworkInternals.GameServer.<InstantiateScripts>d__61.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at GTANetworkInternals.GameServer.StartResource(String resourceName, String parent)
+
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:41:26
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: instantiating Server_MP.PlayerState..
+-> Error starting 'Server_MP'
+System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at GTANetworkInternals.GameServer.<InstantiateScripts>d__61.MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1.AddEnumerable(IEnumerable`1 enumerable)
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at GTANetworkInternals.GameServer.StartResource(String resourceName, String parent)
+
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:42:17
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 4 server event(s)
+Server_MP: loaded 4 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:44:03
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 4 server event(s)
+Server_MP: loaded 4 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:46:06
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 4 server event(s)
+Server_MP: loaded 4 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:52:20
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 4 server event(s)
+Server_MP: loaded 4 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 12:53:00
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 4 server event(s)
+Server_MP: loaded 4 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Автомобили созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 13:23:51
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+
+CS0839: Argument missing
+       -> ServerState.cs:72
+
+
+-> Error starting Server_MP due compilation error(s).
+Exception message: Value cannot be null.
+Parameter name: source
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 13:24:20
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 5 server event(s)
+Server_MP: loaded 5 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Автомобили созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+WARNING: "MoveEntityPosition" function is not implemented yet.
+[01:24:46][0]WeirdNewbie: tw
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 13:27:00
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 5 server event(s)
+Server_MP: loaded 5 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Автомобили созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 13:29:02
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 5 server event(s)
+Server_MP: loaded 5 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Автомобили созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 13:38:23
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 5 server event(s)
+Server_MP: loaded 5 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Автомобили созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+WARNING: "MoveEntityPosition" function is not implemented yet.
+WARNING: "MoveEntityPosition" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 13:44:42
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+admin: instantiating Main.AdminScript..
+admin: loading server events.. found 2 server event(s)
+admin: loaded 2 server events(s)
+admin: loading commands.. found 9 command(s)
+admin: loaded 9 commands(s)
+-> Resource admin started!
+-> Starting welcomemessages resource..
+welcomemessages: loading scripts.. found 1 script(s)
+welcomemessages: compiling scripts..
+welcomemessages: instantiating WelcomeMessages..
+welcomemessages: loading server events.. found 2 server event(s)
+welcomemessages: loaded 2 server events(s)
+-> Resource welcomemessages started!
+-> Starting Server_MP resource..
+Server_MP: loading scripts.. found 2 script(s)
+Server_MP: compiling scripts..
+Server_MP: instantiating Server_MP.ServerState..
+Server_MP: loading server events.. found 5 server event(s)
+Server_MP: loaded 5 server events(s)
+Server_MP: loading commands.. found 3 command(s)
+Server_MP: command 'dm' already exists!
+Server_MP: loaded 3 commands(s)
+Запуск сервера...
+Coord - запущен
+Шейпы созданы
+Автомобили созданы
+Сервер запущен!
+-> Resource Server_MP started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 13:49:35
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting admin resource..
+admin: loading scripts.. found 1 script(s)
+admin: compiling scripts..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 06.02.2019 13:57:31
+Loaded 451 entries from vehicleData.json
+Loading resources..

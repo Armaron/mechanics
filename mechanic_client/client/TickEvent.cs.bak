@@ -1,0 +1,529 @@
+using cs_packages.browsers;
+using cs_packages.vehicle;
+using RAGE;
+using RAGE.Ui;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace cs_packages.client
+{
+    public class TickEvent : RAGE.Events.Script
+    {
+
+        public static Int64 tickcount = 0;
+        public static bool DrugTimer;
+        public static bool CarBrake;
+        public static bool CarForvard;
+        public TickEvent()
+        {
+            RAGE.Events.Tick += Tick;
+        }
+
+       
+
+
+        private void Tick(List<RAGE.Events.TickNametagData> nametags)
+        {
+
+
+
+         if(CarBrake)
+            {
+                RAGE.Game.Pad.DisableControlAction(2, 72, true);
+            }
+            if (CarForvard)
+            {
+                RAGE.Game.Pad.DisableControlAction(2, 71, true);
+            }
+
+            player.DrawInfo.Draw(nametags);
+           
+
+
+          
+                player.Skills.StaminaTimeSet();
+            
+                    
+               //     RAGE.Game.UIText.Draw(browsers.ClothesMarket.color.ToString(), new System.Drawing.Point(500, 500), 0.5f, System.Drawing.Color.GreenYellow, RAGE.Game.Font.Monospace, true);
+
+                
+
+            
+
+            tickcount++;
+
+
+
+            //{
+            //    Task.Factory.StartNew(() =>
+            //    {
+            //        Task.Delay(10000);
+
+            //    });
+
+            //}
+            if (DrugTimer)
+            {
+
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (tickcount - cs_packages.player.Skills.DrugTimeNow >= 10000)
+                    {
+                        DrugTimer = false;
+                        cs_packages.player.Skills.DrugTimeNow = 0;
+                        RAGE.Events.CallRemote("drugtimer.stop");
+
+
+
+                    }
+                });
+
+
+            }
+
+            //  RAGE.Game.Pad.DisableControlAction(0, 20, true);
+            if (RAGE.Game.Pad.IsControlJustPressed(0, 20))
+            {
+                
+                    RAGE.Voice.Muted = false;
+                    RAGE.Elements.Player.LocalPlayer.PlayFacialAnim("mic_chatter", "mp_facial");
+
+                    Events.CallRemote("PlayerTalk.server");
+                //  //  Chat.Output(RAGE.Elements.Player.LocalPlayer.GetSharedData("Talk").ToString());
+
+           
+
+            }
+            if (RAGE.Game.Pad.IsControlJustReleased(0, 20))
+            {
+                
+                    RAGE.Voice.Muted = true;
+                    RAGE.Elements.Player.LocalPlayer.PlayFacialAnim("mood_normal_1", "facials@gen_male@variations@normal");
+                    Events.CallRemote("PlayerStopTalk.server");
+                //  //  Chat.Output(RAGE.Elements.Player.LocalPlayer.GetSharedData("Talk").ToString());
+
+            
+
+            }
+         
+
+
+            //RAGE.Game.Pad.DisableControlAction(0, 75, true);
+            //RAGE.Game.Pad.DisableControlAction(0, 58, true);
+            //if (RAGE.Game.Pad.IsDisabledControlJustPressed(0, 75))
+            //{
+            //    if (RAGE.Elements.Player.LocalPlayer.Vehicle != null)
+            //    {
+            //        RAGE.Elements.Player.LocalPlayer.TaskLeaveAnyVehicle(0, 0);
+            //        return;
+            //    }
+            //    Vector3 pos = RAGE.Elements.Player.LocalPlayer.Position;
+            //    List<RAGE.Elements.Vehicle> vehicles = RAGE.Elements.Entities.Vehicles.All;
+            //    RAGE.Elements.Vehicle vehicle = vehicles.Find(veh => veh.Position.DistanceTo2D(pos) <= 5f);
+            //    if (vehicle == null)
+            //    {
+            //        return;
+            //    }
+            //    RAGE.Elements.Player.LocalPlayer.TaskEnterVehicle(vehicle.Handle, 5000, -1, 5.0f, 1, 0);
+            //}
+            //if (RAGE.Game.Pad.IsDisabledControlJustPressed(0, 58))
+            //{
+            //    if (RAGE.Elements.Player.LocalPlayer.Vehicle != null)
+            //    {
+            //        RAGE.Elements.Player.LocalPlayer.TaskLeaveAnyVehicle(0, 0);
+            //        return;
+            //    }
+            //    Vector3 pos = RAGE.Elements.Player.LocalPlayer.Position;
+            //    List<RAGE.Elements.Vehicle> vehicles = RAGE.Elements.Entities.Vehicles.All;
+            //    RAGE.Elements.Vehicle vehicle = vehicles.Find(veh => veh.Position.DistanceTo2D(pos) <= 5f);
+            //    if (vehicle == null)
+            //    {
+            //        return;
+            //    }
+            //    int seats = RAGE.Game.Vehicle.GetVehicleModelNumberOfSeats(vehicle.Model) - 1;
+            //    int targetSeat = -99;
+
+            //    for (int i = 0; i < seats; i++)
+            //    {
+            //        if (!vehicle.IsSeatFree(i, 0))
+            //        {
+            //            continue;
+            //        }
+            //        targetSeat = i;
+            //      //  Chat.Output("seat" + targetSeat.ToString());
+            //        break;
+            //    }
+            //    if (targetSeat == -99)
+            //    {
+            //      //  Chat.Output("seat" + targetSeat.ToString());
+            //        return;
+            //    }
+            //  //  Chat.Output("seat" + targetSeat.ToString() + vehicle.Handle.ToString());
+
+
+            //    do
+            //    {
+            //        //RAGE.Events.CallLocal("startEnterVehicle", vehicle.Handle, 5000, targetSeat, 2, 1);
+            //        RAGE.Elements.Player.LocalPlayer.TaskEnterVehicle(vehicle.Handle, 5000, targetSeat, 2.0f, 1, 0);
+            //        Task.Delay(1000);
+            //    }
+            //    while (RAGE.Elements.Player.LocalPlayer.Vehicle == null);
+
+
+            //  //  Chat.Output("seat" + targetSeat.ToString() + vehicle.Handle.ToString());
+               
+            //}
+
+            if (Inventory.give)
+            {
+                Task.Factory.StartNew(() =>
+                {
+
+                    if ((tickcount - Inventory.tempGive) > 100000)
+                    {
+                        Inventory.GiveFalse();
+
+                    }
+                });
+
+            }
+
+
+
+
+            if (tickcount > Int64.MaxValue - 100)
+            {
+                tickcount = 0;
+            }
+            if (tickcount % 5 == 0)
+            {
+
+                if (RAGE.Elements.Player.LocalPlayer.Vehicle != null)
+                {
+                    Speed.UpdateSpeed();
+                }
+               
+
+            }
+            if (tickcount % 50 == 0)
+            {
+
+               
+                if (RAGE.Elements.Player.LocalPlayer.Vehicle != null)
+                        Speed.UpdateDistation();
+                  
+                   
+              
+            }
+            if (tickcount % 1000 == 0)
+            {
+               // Chat.Output(Win32.IsFocusWindow().ToString());
+               
+                if (RAGE.Elements.Player.LocalPlayer.Vehicle != null)
+                { }
+                    else if (Speed.speedometrCef != null)
+                        {
+                            Speed.speedometrCef.Destroy();
+                            Speed.speedometrCef = null;
+                        }
+
+
+            }
+
+            if (tickcount % 25 == 0)
+            {
+                Task.Factory.StartNew(() =>
+                {
+
+                    player.VoiceChat.VoiceProcess(nametags);
+                });
+
+
+            }
+
+
+
+            if (tickcount % 1000 == 0)
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    Events.CallRemote("updateParametrs.server");
+
+                });
+
+
+                //      mp.game.graphics.notify("Аккаунт успешно сохранен");
+            }
+
+
+            KeyManager.KeyBind(KeyManager.KeyTilda, () =>
+            {
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (KeyManager.block == 1 || KeyManager.block == 0)
+                        Menu.OpenMenu();
+                });
+
+            });
+
+            KeyManager.KeyBind(KeyManager.KeyP, () =>
+            {
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (KeyManager.block == 13 || KeyManager.block == 0)
+                    {
+                        List<RAGE.Elements.Vehicle> vehicles = RAGE.Elements.Entities.Vehicles.All;
+                        //    RAGE.Elements.Vehicle vehicle = vehicles.Find(veh => veh.Position.DistanceTo2D(pos) <= 5f);
+                         var vehicle = vehicles.Find(veh => veh.Position.DistanceTo2D(RAGE.Elements.Player.LocalPlayer.Position) <= 2f);
+                        if (vehicle != null)
+                        {
+                            Events.CallRemote("OpenCloseMenuCar",vehicle.GetNumberPlateText());
+                        }
+
+
+
+
+
+
+                    }
+                       
+                        //   Vehicle.OpenCarMenu();
+                });
+
+            });
+            KeyManager.KeyBind(KeyManager.KeyU, () =>
+            {
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (KeyManager.block == 10 || KeyManager.block == 0)
+                        //Vehicle.OpenCarMenu();
+                        Tablet.OpenClose(null);
+                });
+
+            });
+            RAGE.Game.Pad.DisableControlAction(0,86,true);
+
+
+
+            if (RAGE.Game.Pad.IsDisabledControlJustPressed(0, 86))
+            {
+                Task.Factory.StartNew(() =>
+                {
+                   
+                        Events.CallRemote("MoveToMarker");
+
+                });
+            }
+
+
+
+            KeyManager.KeyBind(KeyManager.KeyE, () =>
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    if (KeyManager.block == 0)
+                        Events.CallRemote("MoveToMarker");
+
+                });
+
+            });
+            KeyManager.KeyBind(KeyManager.KeyT, () =>
+            {
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (KeyManager.block == 0)
+                        KeyManager.block = 2;
+                });
+
+                // Events.CallRemote("MoveToMarker");
+            });
+            KeyManager.KeyBind(KeyManager.KeyK, () =>
+            {
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (KeyManager.block == 0 || KeyManager.block == 8)
+                    {
+                        browsers.RadioStation.Open();
+                    }
+                });
+
+
+                // Events.CallRemote("MoveToMarker");
+            });
+
+
+            KeyManager.KeyBind(KeyManager.KeyO, () =>
+            {
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (KeyManager.block == 0 || KeyManager.block == 12)
+                    {
+                        browsers.Usability.OpenUsability();
+                    }
+                });
+
+
+                // Events.CallRemote("MoveToMarker");
+            });
+
+
+
+
+            KeyManager.KeyBind(KeyManager.KeyX, () =>
+            {
+
+                Task.Factory.StartNew(() =>
+                {
+                    if (KeyManager.block == 0)
+                        Events.CallRemote("RadioMuted");
+
+                });
+
+                // Events.CallRemote("MoveToMarker");
+            });
+            KeyManager.KeyBind(KeyManager.KeyNum9, () =>
+            {
+
+                Task.Factory.StartNew(() =>
+                {
+                    if (KeyManager.block == 0)
+                        player.PlayerState.IDEnabled = !player.PlayerState.IDEnabled;
+
+                });
+
+                // Events.CallRemote("MoveToMarker");
+            });
+
+            KeyManager.KeyBind(KeyManager.KeyPhone, () =>
+            {
+
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (KeyManager.block == 10 || KeyManager.block == 0)
+                    {
+                        //browsers.Phone.OpenClose();
+                        Events.CallRemote("OpenClosePhone");
+                    }
+                });
+
+
+            });
+
+
+
+            KeyManager.KeyBind(KeyManager.KeyY, () =>
+            {
+
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (Inventory.give)
+                        Inventory.GiveTrue();
+                });
+
+                // Events.CallRemote("MoveToMarker");
+            });
+
+            KeyManager.KeyBind(KeyManager.KeyL, () =>
+            {
+
+
+                Task.Factory.StartNew(() =>
+                {
+
+                    if (KeyManager.block == 3 || KeyManager.block == 0)
+                    {
+                        Menu.OpenAnimList();
+                        //Events.CallRemote("MoveToMarker");
+                    }
+                });
+
+            });
+
+
+            KeyManager.KeyBind(KeyManager.KeyEnter, () =>
+            {
+
+                Task.Factory.StartNew(() =>
+                {
+                    if (KeyManager.block == 2)
+                        KeyManager.block = 0;
+
+                });
+
+                // Events.CallRemote("MoveToMarker");
+            });
+
+
+            //KeyManager.KeyBind(KeyManager.KeyN, () =>
+            //{
+
+
+            //    // Events.CallRemote("MoveToMarker");
+            //});
+
+            KeyManager.KeyBind(KeyManager.KeyF2, () =>
+            {
+                //   RAGE.Elements.MapObject mapObject = new RAGE.Elements.MapObject(113622690, ped.Position, new Vector3());
+
+                Task.Factory.StartNew(() =>
+                {
+                    Events.CallRemote("stopAnimation");
+                    if (KeyManager.block == 3)
+                        KeyManager.block = 0;
+
+                });
+
+            });
+
+
+
+
+            KeyManager.KeyBind(KeyManager.KeyF5, delegate
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    Cursor.Visible = !Cursor.Visible;
+
+                });
+
+            });
+
+
+
+
+            KeyManager.KeyBind(KeyManager.KeyI, () =>
+            {
+                Task.Factory.StartNew(() =>
+                {
+                    if (KeyManager.block == 4 || KeyManager.block == 0)
+                    {
+
+
+
+                        //Events.CallRemote("setweapon", RAGE.Elements.Player.LocalPlayer.GetAmmoInWeapon(Convert.ToUInt32(args[0])));
+
+
+                        Events.CallRemote("getinventary.server");
+                    }
+
+                });
+
+                // Inventory.OpenInventory();
+            });
+
+        }
+
+    }
+
+
+}
