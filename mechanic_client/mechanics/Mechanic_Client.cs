@@ -14,6 +14,7 @@ namespace mechanic_client
         public static bool[] Window { get; set; } = new bool[4];
         public static bool ActiveDiag = false;
         public static bool ActiveRepairKit = false;
+        public static bool ActiveRepairKitCitizen = false;
         private static HtmlWindow buyBuisness;
         private static HtmlWindow serviceBook;
         public static List<Current_Mods> Mods = new List<Current_Mods>();
@@ -37,7 +38,7 @@ namespace mechanic_client
             Events.Add("Sync_Event_Detach_cl", SyncDetch);
             Events.Add("LoadVehicleRecord", LoadVehicleRecord);
             Events.Add("closeServiceBook", CloseServiceBook);
-            Events.Add("pushBuyCustoms", OpenBuyBuis);
+           // Events.Add("pushBuyCustoms", OpenBuyBuis);
             Events.Add("buyCustomsExit", CloseBuyBuis);
             Events.Add("buyCustomsButton", BuyCustomsButton);
             Events.Add("SaveVehicleRecord", SaveVehicleRecord);
@@ -60,9 +61,15 @@ namespace mechanic_client
             Events.Add("ClientNotify", ClientNotify);
             Events.Add("SaveDamag", SaveDamag);
             Events.Add("SetDamagGoCar", SetDamagGoCar);
-
+            Events.Add("LoadBuisOwner", LoadBuisOwner);
 
             // Events.Add("init", init);
+        }
+
+        public static List<string> nameList = new List<string>();
+        private void LoadBuisOwner(object[] args)
+        {
+            nameList = JsonConvert.DeserializeObject<List<string>>(args[0].ToString());
         }
 
         private void ClientNotify(object[] args)
@@ -311,7 +318,9 @@ namespace mechanic_client
         }
         private void CloseServiceBook(object[] args)
         {
+            serviceBook.Active = false;
             serviceBook.Destroy();
+            serviceBook = null;
             RAGE.Ui.Cursor.Visible = false;
         }
 
@@ -351,7 +360,9 @@ namespace mechanic_client
         private void LoadVehicleRecord(object[] args)
         {
             // Chat.Output(args[5].ToString());
-            VehicleDetailsCl vehdet = new VehicleDetailsCl(args[0].ToString(), args[1].ToString(), args[2].ToString(), (int)args[3], args[4].ToString(), args[5].ToString());
+            string date = args[4].ToString();
+            date = date.Replace("@", "");
+            VehicleDetailsCl vehdet = new VehicleDetailsCl(args[0].ToString(), args[1].ToString(), args[2].ToString(), (int)args[3], date, args[5].ToString());
             serviceBook = new HtmlWindow("package://auth/assets/service-book.html");
             string json = JsonConvert.SerializeObject(vehdet);
             serviceBook.ExecuteJs($"pushServiceBook('{json}')");
@@ -363,21 +374,41 @@ namespace mechanic_client
         public static void SaveVehicleRecord(object[] args)
         {
           
-            Chat.Output(args[2].ToString() + " " + args[3].ToString());
+            //Chat.Output(args[2].ToString() + " " + args[3].ToString());
             Events.CallRemote("Add_Service_Records", args[2].ToString(), args[4].ToString(), args[3].ToString(), Ticks_Mechs.CarScore + (int)args[1], Ticks_Mechs.Data, Ticks_Mechs.Text);
             Ticks_Mechs.Data = "";
-            //Events.CallRemote("Save_Car_Health", args[3].ToString(), args[2].ToString() , Convert.ToInt32(veh.GetEngineHealth().ToString()));
             Ticks_Mechs.Text = "";
             Ticks_Mechs.CarScore = 0;
+            Ticks_Mechs.MileageKM = 0;
             Ticks_Mechs.Mileage = 0;
         }
 
-        public static void OpenBuyBuis(object[] args)
+
+
+        public static void OpenBuyBuis(string nameB)
         {
+            if(nameList.Count != 0) {
+            bool accetpBuy = true;
+            //Events.CallRemote("Load_All_Buisness");
+            foreach (var item in nameList)
+            {
+                if(item == nameB)
+                {
+                    accetpBuy = false;
+                    break;
+                }
+            }
+            if (accetpBuy) { 
             buyBuisness = new HtmlWindow("package://auth/assets/buyCustoms.html");
             buyBuisness.ExecuteJs($"pushBuyCustoms('{1000}')");
             buyBuisness.Active = true;
             RAGE.Ui.Cursor.Visible = true;
+            }
+                else
+                {
+                    Notify("Это бизнес уже куплен");
+                }
+            }
         }
         public static void CloseBuyBuis(object[] args)
         {
@@ -397,10 +428,10 @@ namespace mechanic_client
                 RAGE.Game.Vehicle.SetVehicleBodyHealth(veh, 400);
 
             }
-            if (text == ".s")
+            if (text == ".g")
             {
 
-
+                PlaceVehOnGround();
 
             }
             if (text == ".tow")
@@ -449,8 +480,10 @@ namespace mechanic_client
         public static void OpenServiceBook()
         {
             int veh = GetVehicle(5.0f);
-            Chat.Output(RAGE.Game.Vehicle.GetVehicleNumberPlateText(veh));
-            Events.CallRemote("ServiceBook", RAGE.Game.Vehicle.GetVehicleNumberPlateText(veh));
+           
+            string plate = RAGE.Game.Vehicle.GetVehicleNumberPlateText(veh);
+            plate = plate.Replace(" ", "");
+            Events.CallRemote("ServiceBook", plate);
 
         }
 
@@ -468,12 +501,12 @@ namespace mechanic_client
                 if (!RAGE.Game.Entity.IsEntityAVehicle(veh))
                 {
                     veh = RAGE.Game.Vehicle.GetClosestVehicle(pos.X + 0.0001f, pos.Y + 0.0001f, pos.Z + 0.0001f, radius + 0.0001f, 0, 4 + 2 + 1);
-                    return veh;
+                   // return veh;
                 }
-                else
-                {
+                //else
+                //{
                     return veh;
-                }
+               // }
 
 
             }
@@ -519,15 +552,18 @@ namespace mechanic_client
                 ActiveRepairKit = false;
             }
         }
+
         public static void HasRepaikit(object[] args)
         {
             if (!ActiveRepairKit)
             {
-                ActiveRepairKit = true;
+                ActiveRepairKitCitizen = true;
+                Notify("Рем. Комплект активирован");
             }
             else
             {
-                ActiveRepairKit = false;
+                ActiveRepairKitCitizen = false;
+                Notify("Рем. Комплект деактивирвоан");
             }
         }
 
@@ -978,6 +1014,15 @@ namespace mechanic_client
             RAGE.Game.Ui.DrawNotification(true, false);
         }
 
+        public static void PlaceVehOnGround()
+        {
+            int veh = GetVehicle(5.0f);
+            if (RAGE.Game.Entity.IsEntityAVehicle(veh))
+            {
+                RAGE.Game.Vehicle.SetVehicleOnGroundProperly(veh, 1);
+            }
+        }
+
         public static void VehicleBone(string bone, string text)
         {
             int veh = GetVehicle(5.0f);
@@ -1071,12 +1116,12 @@ namespace mechanic_client
             int vehicle = RAGE.Game.Ped.GetVehiclePedIsIn(ped, true);
             List<Vehicle> vehicles = Entities.Vehicles.All;
             Vehicle veh_obj = vehicles.Find(pl => pl.Handle == vehicle);
-            Chat.Output(vehicle.ToString());
+          
 
             if (RAGE.Game.Vehicle.IsVehicleModel(vehicle, RAGE.Game.Misc.GetHashKey("flatbed")))
             {
                 int targetVehicle = GetVehicle(11.0f);
-
+                
                 Vector3 towPos = RAGE.Game.Entity.GetEntityCoords(vehicle, false);
                 Vector3 targetPos = RAGE.Game.Entity.GetEntityCoords(targetVehicle, false);
                 float dist = RAGE.Game.Misc.GetDistanceBetweenCoords(towPos.X, towPos.Y, towPos.Z, targetPos.X, targetPos.Y, targetPos.Z, true);

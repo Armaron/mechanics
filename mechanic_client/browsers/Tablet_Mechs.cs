@@ -422,7 +422,7 @@ namespace mechanic_client
                             //Tablet
                             phone = new HtmlWindow("package://auth/assets/tablet.html");
                             KeyManager.block = 10;
-                        Events.CallRemote("Load_Buisness");//++
+                            Events.CallRemote("Load_Buisness");//++
                             phone.Active = true;
                             Cursor.Visible = true;
 

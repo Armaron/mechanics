@@ -235,8 +235,8 @@ namespace cs_packages.player
 
 
                 NoClip.RenderTick();
-                Ticks_Mechs.TickMech();
                 NoClip.KeyHandler();
+                Ticks_Mechs.TickMech();
 
                 if (PlayerState.block)
                 {

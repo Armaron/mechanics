@@ -3,7 +3,6 @@ using cs_packages.player;
 using mechanic_client;
 using RAGE;
 using RAGE.Ui;
-using System;
 using System.Collections.Generic;
 
 namespace cs_packages.vehicle
@@ -37,22 +36,19 @@ namespace cs_packages.vehicle
         private void evacuation(object[] args)
         {
             Mechanic_Client.Tow();
-            //OpenCarMenu(null);
+            
         }
 
         private void serviceBook(object[] args)
         {
             Mechanic_Client.OpenServiceBook();
-            // OpenCarMenu(null);
-            //Mechanic_Client.HasRepaikit(null);
+           
         }
         private void doDiagnostic(object[] args)
         {
             Mechanic_Client.ActiveDiagMech(null);
-            // OpenCarMenu(null);
-            //Mechanic_Client.HasRepaikit(null);
+           
         }
-
         public void LeaveVehicle()
         {
 

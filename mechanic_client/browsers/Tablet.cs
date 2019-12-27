@@ -7,7 +7,7 @@ using System;
 
 namespace cs_packages.browsers
 {
-     public class Tablet : Events.Script
+    public class Tablet : Events.Script
     {
         static public HtmlWindow phone = null;
         static uint globalDimension = 4294967295;
@@ -15,7 +15,7 @@ namespace cs_packages.browsers
         {
             Events.Add("openclose.tablet", OpenClose);
             Events.Add("carBuyButton", CarBuyButton);
-            //Events.Add("lockTablet", OpenClose);
+            Events.Add("lockTablet", OpenClose);
             Events.Add("OpenNote", OpenCloseNote);
             Events.Add("OpenNoteMed", OpenCloseNoteMed);
             Events.Add("exitNote", OpenClose);
@@ -39,6 +39,7 @@ namespace cs_packages.browsers
             Events.Add("person", Persons);
             Events.Add("sellContactAuthData", SellContactAuthData);
             Events.Add("AddPoliceMark", AddPoliceMark);
+            Events.Add("AddMedicMark", AddMedicMark);
             Events.Add("MoveTo", MoveTo);
            // Events.Add("reviveThing", ReviveThing);
             Events.Add("SellContactAuthDataServer", SellContactAuthDataServer);
@@ -76,7 +77,7 @@ namespace cs_packages.browsers
         }
         public void HireNewbieMedical(object[] args)
         {
-            Events.CallRemote("HireNewbieMedical", args[0]);
+            Events.CallRemote("HireNewbieMed", args[0]);
         }
 
 
@@ -153,6 +154,19 @@ namespace cs_packages.browsers
         //    Events.CallRemote("ReviveThing", args[0]);
         //}
 
+        public void AddMedicMark(object[] args)
+        {
+            Vector3 vector3 = new Vector3(Convert.ToSingle(args[0]), Convert.ToSingle(args[1]), Convert.ToSingle(args[2]));
+            Blip blip = new Blip(51, vector3, color: 1, shortRange: false, dimension: globalDimension);
+            blip.SetData("SenderPhoneNumber", 00);
+
+            Colshape colshape = new SphereColshape(vector3, 1.0f, globalDimension);
+            colshape.SetData("SenderPhoneNumber", 00);
+
+            Phone.blips.Add(blip);
+            Phone.colshapes.Add(colshape);
+
+        }
 
 
         public void AddPoliceMark(object[] args)
@@ -296,7 +310,7 @@ namespace cs_packages.browsers
                 phone = new HtmlWindow("package://auth/assets/policeNotebook.html");
                 phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','" + args[1].ToString() + "','" + args[2].ToString() + "','" + args[3].ToString() + "','"+args[4].ToString() + "','admin','" + args[5].ToString() + "');");
                 // phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "',filer, archive," +  "'"+args[3].ToString() + "'," + true + ");");
-                KeyManager.block = 10;
+                KeyManager.block = 15;
                 Chat.Show(false);
 
                 phone.Active = true;
@@ -334,7 +348,7 @@ namespace cs_packages.browsers
                 phone = new HtmlWindow("package://auth/assets/medicalNotebook.html");
                 phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','admin');");
                 // phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "',filer, archive," +  "'"+args[3].ToString() + "'," + true + ");");
-                KeyManager.block = 10;
+                KeyManager.block = 15;
                 Chat.Show(false);
 
                 phone.Active = true;
@@ -381,7 +395,7 @@ namespace cs_packages.browsers
 
 
 
-        public static void OpenClose(object[] args)
+          public static void OpenClose(object[] args)
         {
             if (RAGE.Elements.Player.LocalPlayer.GetSharedData("mechBuisness") == null)
             {

@@ -92,7 +92,7 @@ namespace cs_packages.client
         static KeyManager()
         {
             Events.Add("KeyIpress", KeyIPress);
-            //Events.Add("KeyOpress", KeyOPress);
+            Events.Add("KeyOpress", KeyOPress);
             Events.Add("KeyLpress", KeyLPress);
             Events.Add("KeyKpress", KeyKPress);
           //  Events.Add("KeyJpress", KeyJPress);
@@ -108,7 +108,7 @@ namespace cs_packages.client
             Events.Add("KeyGpress", KeyGpress);
             Events.Add("KeyXpressDown", KeyXpressDown);
             Events.Add("KeyPolice", KeyPolice);
-            Events.Add("KeyCtrlpress", KeyCtrlpress);
+               Events.Add("KeyCtrlpress", KeyCtrlpress);
 
         }
 
@@ -135,11 +135,12 @@ namespace cs_packages.client
 
 
         }
+
         public static void KeyKPress(object[] args)
         {
             Action act = () =>
             {
-                int veh = GetVehicle(10.0f);
+                int veh = mechanic_client.Mechanic_Client.GetVehicle(10.0f);
                 uint modelVeh = RAGE.Game.Entity.GetEntityModel(veh);
                 Vector3 coords_b = new Vector3();
                 List<Vehicle> vehicles = Entities.Vehicles.All;
@@ -204,30 +205,30 @@ namespace cs_packages.client
 
         }
 
-        public static int GetVehicle(float radius)
-        {
-            Vector3 pos = Player.LocalPlayer.Position;
-            if (Player.LocalPlayer.IsSittingInAnyVehicle())
-            {
-                return Player.LocalPlayer.GetVehicleIsIn(true);
-            }
-            else
-            {
-                int veh = RAGE.Game.Vehicle.GetClosestVehicle(pos.X + 0.0001f, pos.Y + 0.0001f, pos.Z + 0.0001f, radius + 0.0001f, 0, 8192 + 4096 + 4 + 2 + 1);
-                if (!RAGE.Game.Entity.IsEntityAVehicle(veh))
-                {
-                    veh = RAGE.Game.Vehicle.GetClosestVehicle(pos.X + 0.0001f, pos.Y + 0.0001f, pos.Z + 0.0001f, radius + 0.0001f, 0, 4 + 2 + 1);
-                    return veh;
-                }
-                else
-                {
-                    return veh;
-                }
-
-
-            }
-
-        }
+      //  public static int GetVehicle(float radius)
+      //  {
+      //      Vector3 pos = Player.LocalPlayer.Position;
+      //      if (Player.LocalPlayer.IsSittingInAnyVehicle())
+      //      {
+      //          return Player.LocalPlayer.GetVehicleIsIn(true);
+      //      }
+      //      else
+      //      {
+      //          int veh = RAGE.Game.Vehicle.GetClosestVehicle(pos.X + 0.0001f, pos.Y + 0.0001f, pos.Z + 0.0001f, radius + 0.0001f, 0, 8192 + 4096 + 4 + 2 + 1);
+      //          if (!RAGE.Game.Entity.IsEntityAVehicle(veh))
+      //          {
+      //              veh = RAGE.Game.Vehicle.GetClosestVehicle(pos.X + 0.0001f, pos.Y + 0.0001f, pos.Z + 0.0001f, radius + 0.0001f, 0, 4 + 2 + 1);
+      //              return veh;
+      //          }
+      //          else
+      //          {
+      //              return veh;
+      //          }
+      //
+      //
+      //      }
+      //
+      //  }
 
         public static void KeyCtrlpress(object[] args)
         {
@@ -247,27 +248,37 @@ namespace cs_packages.client
                     //Chat.Output("Cam " + RAGE.Game.Cam.GetGameplayCamRelativeHeading().ToString());
                     //Chat.Output("Pl " + RAGE.Elements.Player.LocalPlayer.GetHeading().ToString());
                     List<RAGE.Elements.Player> players = RAGE.Elements.Entities.Players.All;
-                    for (int i = 0; i < players.Count; i++)
+                Chat.Output("Client find " + players.Count.ToString() + "players");
+             
+
+                for (int i = 0; i < players.Count; i++)
                     {
                         if (players[i] != RAGE.Elements.Player.LocalPlayer)
-                            if (Math.Abs(players[i].Position.DistanceTo2D(RAGE.Elements.Player.LocalPlayer.Position)) < 3f)
+                            if (Math.Abs(players[i].Position.DistanceTo(RAGE.Elements.Player.LocalPlayer.Position)) < 3f)
                             {
+                            Chat.Output("Client " + players[i].Name + " in range");
 
 
-                              
 
 
-                                Vector3 napravl = RAGE.Elements.Player.LocalPlayer.Position;
+                            Vector3 napravl = RAGE.Elements.Player.LocalPlayer.Position;
                                 Vector3 normalize = players[i].Position;
                                 double rad = Math.Atan2(napravl.Y - normalize.Y, napravl.X - normalize.X);
                                 double grad = ((rad * 180) / 3.14) + 90.0;
                                 if (grad < 0)
                                     grad = 360 + grad;
-                                if (Math.Abs(grad - RAGE.Elements.Player.LocalPlayer.GetHeading() + RAGE.Game.Cam.GetGameplayCamRelativeHeading()) < 25)
+
+                          //  Chat.Output(Math.Abs(grad - RAGE.Elements.Player.LocalPlayer.GetHeading() - RAGE.Game.Cam.GetGameplayCamRelativeHeading()).ToString());
+                            double result = Math.Abs(grad - RAGE.Elements.Player.LocalPlayer.GetHeading() - RAGE.Game.Cam.GetGameplayCamRelativeHeading());
+                            if(result >= 360)
+                            {
+                                result -= 360;
+                            }
+                            if (result < 25)
                                 {
-                                Chat.Output("GetPlayer");   
+                                Chat.Output("Try to call" + players[i].Name);
                                 DrawInfo.target = players[i];
-                                    player = players[i];
+                                    player = DrawInfo.target;
                                     DrawInfo.playerLight = true;
                                     DrawInfo.leter = "H";
                                   
@@ -299,7 +310,13 @@ namespace cs_packages.client
             {
                 if (block == 4 || block == 0)
                     if (Inventory.give)
+                    {
                         Inventory.GiveTrue();
+                    }
+                else
+                    {
+                        Events.CallRemote("NotifyClient");
+                    }
 
             };
 
@@ -422,7 +439,8 @@ namespace cs_packages.client
             {
                 Action act = () =>
             {
-                DrawInfo.LoadScreen = true;
+               if(Usability.UsabilityBrowser==null)
+               DrawInfo.LoadScreen = true;
               
                 if (player != null)
                 {
@@ -590,28 +608,28 @@ namespace cs_packages.client
 
 
 
-       // public static void KeyOPress(object[] args)
-       // {
+        public static void KeyOPress(object[] args)
+        {
 
-        //    if (block == 0)
-     //      {
-     //          Action act = () =>
-     //          {
-     //              DrawInfo.LoadScreen = true;
-     //              //browsers.Phone.OpenClose();
-     //              Events.CallRemote("CarInvOpenClient");
+            if (block == 0)
+            {
+                Action act = () =>
+                {
+                    DrawInfo.LoadScreen = true;
+                    //browsers.Phone.OpenClose();
+                    Events.CallRemote("CarInvOpenClient");
 
-     //          };
+                };
 
-     //          KeyBind(act);
-
-
+                KeyBind(act);
 
 
 
 
-     //      }
-     //  }
+
+
+            }
+        }
 
 
         public static void KeyIPress(object[] args)

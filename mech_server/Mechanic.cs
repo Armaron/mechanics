@@ -52,25 +52,21 @@ namespace mechanics
             new Vector3(-207.1979f, -1324.141f, 30.89041f)
         };
 
-        
+         //public static List<string> nameList = new List<string>();
         public static void MechInit(Client client)
         {
-           
 
-            for (int i = 0; i < buyCustoms.Length; i++)
+            client.SetSharedData(Serv_RP.player.PlayerData.Nickname, client.GetData(Serv_RP.player.PlayerData.Nickname));
+            // Mechanic_Player.LoadAllBuisnessOwner(client, null);
+            List<string> nameList = new List<string>();
+            foreach (var item in mechs_buisness)
             {
-                NAPI.Marker.CreateMarker(29, buyCustoms[i], new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f), 1f, new Color(0, 204, 0), true, uint.MaxValue);
-                NAPI.Marker.CreateMarker(0, repairCustoms[i], new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f), 1f, new Color(255, 176, 1), true, uint.MaxValue);
-                Blip blip = NAPI.Blip.CreateBlip(buyCustoms[i], uint.MaxValue);
-                blip.ShortRange = true;
-                blip.Name = "Автосервис";
-                blip.Sprite = 402U;
+                if (item.Owner != "username")
+                {
+                    nameList.Add(item.Name);
+                }
             }
-            for (int i = 0; i < tuningCustoms.Length; i++)
-            {
-                NAPI.Marker.CreateMarker(0, tuningCustoms[i], new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f), 1f, new Color(255, 176, 1), true, uint.MaxValue);
-
-            }
+            NAPI.ClientEvent.TriggerClientEvent(client, "LoadBuisOwner", nameList);
             List<Vehicle> vehicles = NAPI.Pools.GetAllVehicles();
             foreach (var item in vehicles)
             {
@@ -91,7 +87,7 @@ namespace mechanics
                     client.SetSharedData(Serv_RP.player.PlayerData.Fraction, "mechs");
                     client.SetData(Serv_RP.player.PlayerData.Fraction, "mechs");
                     client.SetSharedData("typeCustoms", item.TypeCustoms);
-                    client.SetSharedData(Serv_RP.player.PlayerData.Nickname, client.GetData(Serv_RP.player.PlayerData.Nickname));
+                    
                 }
                 if (item.WorkersList != null)
                 {
@@ -100,7 +96,7 @@ namespace mechanics
                        // mechs.Add(new MechsMembersModel(null, item.Name, item.TypeCustoms));
                         if (workers.Key == client.GetData(Serv_RP.player.PlayerData.Nickname) && workers.Key!= item.Owner)
                         {
-                            client.SetSharedData(Serv_RP.player.PlayerData.Nickname, client.GetData(Serv_RP.player.PlayerData.Nickname));
+                            
                             client.SetSharedData(Serv_RP.player.PlayerData.Fraction, "mechs");
                             client.SetData(Serv_RP.player.PlayerData.Fraction, "mechs");
                             client.SetSharedData("typeCustoms", item.TypeCustoms);
@@ -113,18 +109,32 @@ namespace mechanics
 
         public static void LoadAllBusiness(List<Mech_Buisness> mechs_buis)
         {
+           
+            for (int i = 0; i < buyCustoms.Length; i++)
+            {
+                NAPI.Marker.CreateMarker(29, buyCustoms[i], new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f), 1f, new Color(0, 204, 0), true, uint.MaxValue);
+                NAPI.Marker.CreateMarker(0, repairCustoms[i], new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f), 1f, new Color(255, 176, 1), true, uint.MaxValue);
+                Blip blip = NAPI.Blip.CreateBlip(buyCustoms[i], uint.MaxValue);
+                blip.ShortRange = true;
+                blip.Name = "Автосервис";
+                blip.Sprite = 402U;
+            }
+            for (int i = 0; i < tuningCustoms.Length; i++)
+            {
+                NAPI.Marker.CreateMarker(0, tuningCustoms[i], new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f), 1f, new Color(255, 176, 1), true, uint.MaxValue);
 
+            }
             if (mechs_buis.Count != 0)
             {
                 
                
-              //Serv_RP.database.DataBase.UpdateMechBusinesOnBD(new Mech_Buisness("buis11"));
+              //Serv_RP.database.DataBase.UpdateMechBusinesOnBD(new Mech_Buisness("buis3"));
                mechs_buisness = mechs_buis;
-                
-               foreach (var item in mechs_buisness)
-               {
-                   NAPI.Util.ConsoleOutput(item.Owner.ToString());
-               }
+             
+                 foreach (var item in mechs_buisness)
+                 {
+                    NAPI.Util.ConsoleOutput(item.Owner);
+                 }
             }
             else
             {
@@ -176,19 +186,20 @@ namespace mechanics
 
         public static void MechSpawn(Client client)
         {
-            List<Vehicle> vehicles = NAPI.Pools.GetAllVehicles();
-            foreach (var item in vehicles)
-            {
+           // List<Vehicle> vehicles = NAPI.Pools.GetAllVehicles();
+           // foreach (var item in vehicles)
+           // {
+           //
+           //
+           //     Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == item.NumberPlate);
+           //     NAPI.Util.ConsoleOutput(veh_data.PlateNumber);
+           //     NAPI.ClientEvent.TriggerClientEvent(client, "spawnEngHealth", item, veh_data.EngHealth);
+           //     NAPI.ClientEvent.TriggerClientEvent(client, "spawnBodyHealth", item, veh_data.BodyHealth);
+           //     bool[] damag = NAPI.Util.FromJson<bool[]>(veh_data.Damag);
+           //     if (veh_data.Damag != "") { NAPI.ClientEvent.TriggerClientEvent(client, "SetDamag", veh_data.Damag); }
+           //    
+           // }
 
-
-                Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == item.NumberPlate);
-                NAPI.Util.ConsoleOutput(veh_data.PlateNumber);
-                NAPI.ClientEvent.TriggerClientEvent(client, "spawnEngHealth", item, veh_data.EngHealth);
-                NAPI.ClientEvent.TriggerClientEvent(client, "spawnBodyHealth", item, veh_data.BodyHealth);
-                bool[] damag = NAPI.Util.FromJson<bool[]>(veh_data.Damag);
-                if (veh_data.Damag != "") { NAPI.ClientEvent.TriggerClientEvent(client, "SetDamag", veh_data.Damag); }
-               
-            }
         }
 
         public static void MechExitVehicle(Client client, Vehicle veh)
@@ -208,6 +219,18 @@ namespace mechanics
             
             NAPI.Util.ConsoleOutput(veh_data.BodyHealth + " " + veh_data.EngHealth);
             NAPI.ClientEvent.TriggerClientEvent(client, "SaveDamag");
+        }
+
+        public static void MechRepairSave(Client client, Vehicle veh)
+        {
+            Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == veh.NumberPlate);
+            VehicleDetails v = LoadServiceRecord(client, veh.NumberPlate, veh.DisplayName);
+            if (v != null)
+            {
+                NAPI.ClientEvent.TriggerClientEvent(client, "SaveVehicleRecord", veh, v.CarScore, veh.NumberPlate, veh.DisplayName, veh_data.SellDate);
+
+            }
+
         }
         public static void MechServciceRecordInit(Vehicle veh)
         {
@@ -250,8 +273,8 @@ namespace mechanics
             //int count = 0;
             NAPI.Util.ConsoleOutput(veh_data.Name + " " + veh_data.EngMax + " " + veh_data.BodyMax);
             AddServiceRecord(null, veh.NumberPlate, veh_data.SellDate, veh.DisplayName, veh_data.CarScore, "", veh_data.ServiceBook);
-            SaveVehicleHealth(null, veh.DisplayName, veh.NumberPlate, (int)veh_data.EngHealth);
-            SaveVehicleBodyHealth(null, veh.DisplayName, veh.NumberPlate, (int)veh_data.BodyHealth);
+            //SaveVehicleHealth(null, veh.DisplayName, veh.NumberPlate, (int)veh_data.EngHealth);
+            //SaveVehicleBodyHealth(null, veh.DisplayName, veh.NumberPlate, (int)veh_data.BodyHealth);
 
 
         }
@@ -290,8 +313,13 @@ namespace mechanics
         public static void AddServiceRecord(Client client, string carNumber, string sellDate, string carType, int carScore, string dateOf, string doneWorks)
         {
             bool find = false;
-
-            if (veh_det.Count != 0)
+            //dateOf = 
+            
+            if(client == null)
+            {
+                veh_det.Add(new VehicleDetails(carNumber, sellDate, carType, carScore, dateOf, doneWorks));
+            }
+            else if (veh_det.Count != 0)
             {
 
                 foreach (var item in veh_det)
@@ -301,22 +329,27 @@ namespace mechanics
                     {
 
                         item.CarScore = carScore;
-                        item.DateOf = dateOf;
+                        
 
                         Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == carNumber);
-                        item.DoneWorks = veh_data.ServiceBook + dateOf + doneWorks;
                         veh_data.CarScore = carScore;
-                        veh_data.ServiceBook += dateOf + "@" + doneWorks;
+                        if (doneWorks != "")
+                        {
+                            item.DateOf = dateOf;
+                            item.DoneWorks = veh_data.ServiceBook + dateOf + doneWorks + "@" + "Пробег: " + carScore + "@" + "Ремонт провёл: " + client.GetData(Serv_RP.player.PlayerData.Nickname);
+
+                            veh_data.ServiceBook += dateOf + "@" + doneWorks + "@" + "Пробег: " + carScore + "@" + "Ремонт провёл: " + client.GetData(Serv_RP.player.PlayerData.Nickname);
+                        }
                         Serv_RP.database.DataBase.SaveStatVehicleOnBD(veh_data);
                         find = true;
 
-                        break;
+                        //break;
 
                     }
                     else if (veh_det.Find(pl => pl.CarType == carType && pl.CarNumber == carNumber) == null)
                     {
                         veh_det.Add(new VehicleDetails(carNumber, sellDate, carType, carScore, dateOf, doneWorks));
-                        break;
+                        //break;
                     }
 
                 }
@@ -326,17 +359,27 @@ namespace mechanics
 
             //if (Veh_Det.Find(pl => pl.carType == carType && pl.carNumber == carNumber) != null)
         }
-        public static void SaveMaxVehicleHealth(string carNumber, int maxCarHealth)
+        public static void SaveMaxVehicleHealth(Client client, string carNumber, int maxCarHealth)
         {
             Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == carNumber);
             veh_data.EngMax = maxCarHealth;
             Serv_RP.database.DataBase.SaveStatVehicleOnBD(veh_data);
+            //if (client != null)
+            //{
+            //    NAPI.ClientEvent.TriggerClientEvent(client, "SaveVehicleRecord", null, veh_data.CarScore, veh_data.PlateNumber, veh_data.Name, veh_data.SellDate);
+            //}
+            Vehicle veh = NAPI.Pools.GetAllVehicles().Find(v=>v.NumberPlate == carNumber);
+            NAPI.ClientEvent.TriggerClientEvent(client, "SaveVehicleRecord", veh, veh_data.CarScore, veh.NumberPlate, veh.DisplayName, veh_data.SellDate);
+
+            
         }
-        public static void SaveMaxVehicleBodyHealth(string carNumber, int maxCarBodyHealth)
+        public static void SaveMaxVehicleBodyHealth(Client client, string carNumber, int maxCarBodyHealth)
         {
             Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == carNumber);
             veh_data.BodyMax = maxCarBodyHealth;
             Serv_RP.database.DataBase.SaveStatVehicleOnBD(veh_data);
+            Vehicle veh = NAPI.Pools.GetAllVehicles().Find(v => v.NumberPlate == carNumber);
+            NAPI.ClientEvent.TriggerClientEvent(client, "SaveVehicleRecord", veh, veh_data.CarScore, veh.NumberPlate, veh.DisplayName, veh_data.SellDate);
         }
         public static void SaveVehicleHealth(Client client, string carType, string carNumber, int carHealth)
         {
@@ -346,6 +389,10 @@ namespace mechanics
             Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == carNumber);
             veh_data.EngHealth = carHealth;
             Serv_RP.database.DataBase.SaveStatVehicleOnBD(veh_data);
+            //if (client != null)
+            //{
+            //    NAPI.ClientEvent.TriggerClientEvent(client, "SaveVehicleRecord", null, veh_data.CarScore, veh_data.PlateNumber, vehdet.CarType, veh_data.SellDate);
+            //}
 
         }
         public static void SaveMods(string carType, string carNumber, string mods)
@@ -362,7 +409,12 @@ namespace mechanics
             Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == carNumber);
             veh_data.BodyHealth = bodyHealth;
             //veh_data.BodyMax = bodyHealth;
+            
             Serv_RP.database.DataBase.SaveStatVehicleOnBD(veh_data);
+            //if (client != null) 
+            //{ 
+            //NAPI.ClientEvent.TriggerClientEvent(client, "SaveVehicleRecord", null, veh_data.CarScore, veh_data.PlateNumber, m.CarType, veh_data.SellDate);
+            //}
 
         }
         public static int LoadVehicleHealth(Client client, string carType, string carNumber)
@@ -429,6 +481,7 @@ namespace mechanics
                 
                   //listMechs.Remove(client.GetData(Serv_RP.player.PlayerData.Nickname);
                   client.SetSharedData(Serv_RP.player.PlayerData.Fraction, null);
+                  client.SetData(Serv_RP.player.PlayerData.Fraction, null);
                   client.SetSharedData("typeCustoms", null);
                 Serv_RP.database.DataBase.UpdateMechBusinesOnBD(new Mech_Buisness(null, mech_buis.Name, mech_buis.Owner, mech_buis.Gain, mech_buis.TrucksCount, mech_buis.WorkersList, mech_buis.TypeCustoms));
                 NAPI.ClientEvent.TriggerClientEvent(client, "ClientNotify", "Вас исключили из механиков");
@@ -442,18 +495,34 @@ namespace mechanics
         {
             if(mechs_buisness.Find(buis => buis.Name == nameB).Owner == "username")
             { 
-            mechs_buisness.Find(buis => buis.Name == nameB).Name = nameB;
-            mechs_buisness.Find(buis => buis.Name == nameB).Owner = name;
-            mechs_buisness.Find(buis => buis.Name == nameB).TrucksCount = 0;
-            mechs_buisness.Find(buis => buis.Name == nameB).WorkersList = listMechs;
-            mechs_buisness.Find(buis => buis.Name == nameB).Gain = 1000;
+             mechs_buisness.Find(buis => buis.Name == nameB).Name = nameB;
+             mechs_buisness.Find(buis => buis.Name == nameB).Owner = name;
+             mechs_buisness.Find(buis => buis.Name == nameB).TrucksCount = 0;
+             mechs_buisness.Find(buis => buis.Name == nameB).WorkersList = listMechs;
+             mechs_buisness.Find(buis => buis.Name == nameB).Gain = 1000;
 
-            Serv_RP.database.DataBase.UpdateMechBusinesOnBD(new Mech_Buisness(client, nameB, name, 1000, 0, listMechs, typeCustoms));
+                client.SetData("mechBuisness", nameB);
+                client.SetSharedData("mechBuisness", nameB);
+                client.SetSharedData(Serv_RP.player.PlayerData.Fraction, "mechs");
+                client.SetData(Serv_RP.player.PlayerData.Fraction, "mechs");
+                client.SetSharedData("typeCustoms", typeCustoms);
+
+                Serv_RP.database.DataBase.UpdateMechBusinesOnBD(new Mech_Buisness(client, nameB, name, 1000, 0, listMechs, typeCustoms));
+                NAPI.ClientEvent.TriggerClientEvent(client, "ClientNotify", "Вы приобрели бизнесс");
             }
             else
             {
                 NAPI.ClientEvent.TriggerClientEvent(client, "ClientNotify", "Этот бизнес уже принадлежит кому то");
             }
+            List<string> nameList = new List<string>();
+            foreach (var item in mechs_buisness)
+            {
+                if (item.Owner != "username")
+                {
+                    nameList.Add(item.Name);
+                }
+            }
+            NAPI.ClientEvent.TriggerClientEventForAll("LoadBuisOwner", nameList);
 
         }
         public static void RemoveBuisness(string nameB)
@@ -465,6 +534,15 @@ namespace mechanics
             mechs_buisness.Find(buis => buis.Name == nameB).Gain = 0;
 
             Serv_RP.database.DataBase.UpdateMechBusinesOnBD(new Mech_Buisness(nameB));
+            List<string> nameList = new List<string>();
+            foreach (var item in mechs_buisness)
+            {
+                if (item.Owner != "username")
+                {
+                    nameList.Add(item.Name);
+                }
+            }
+           NAPI.ClientEvent.TriggerClientEventForAll("LoadBuisOwner", nameList);
 
         }
 
@@ -523,7 +601,8 @@ namespace mechanics
         {
 
             NAPI.Chat.SendChatMessageToAll(NewNameBuis);
-            // Mech_Buisness mech_buis = Mechs_Buisness.Find(pl => pl.Name == client.GetData("mechBuisness"));
+            Mech_Buisness mech_buis = mechs_buisness.Find(pl => pl.Owner == client.GetData(Serv_RP.player.PlayerData.Nickname));
+            mech_buis.Name = NewNameBuis;
             //
             // //Mechs = Mechs.FindAll(pl => pl.nameBuisness == m.Name);
             // List<string> mechlist = new List<string>();
@@ -536,29 +615,30 @@ namespace mechanics
             // }
             //
             // Mechs_Buisness.Add(new Mech_Buisness(client, NewNameBuis, mech_buis.Owner, mech_buis.Gain, mech_buis.TrucksCount, mechlist, mech_buis.typeCustoms));
-            Mech_Buisness mech_buis = mechs_buisness.Find(pl => pl.Name == client.GetData("mechBuisness"));
+            mechs_buisness.Find(pl => pl.Owner == client.GetData(Serv_RP.player.PlayerData.Nickname)).Name = NewNameBuis;
+            Serv_RP.database.DataBase.UpdateMechBusinesOnBD(mech_buis);
 
-            foreach (var item in mechs.FindAll(pl => pl.NameBuisness == client.GetData("mechBuisness")))
-            {
-                item.NameBuisness = NewNameBuis;
-            }
+            //foreach (var item in mechs.FindAll(pl => pl.NameBuisness == client.GetData("mechBuisness")))
+            //{
+            //    item.NameBuisness = NewNameBuis;
+            //}
 
 
-            foreach (var item in mechs_buisness)
-            {
-                if (item.Name == client.GetData("mechBuisness"))
-                {
-                    client.SetData("mechBuisness", NewNameBuis);
-                    item.Name = NewNameBuis;
-                    foreach (var itemMechs in item.WorkersList)
-                    {
-                        Client target = NAPI.Pools.GetAllPlayers().Find(pl => pl.GetData(Serv_RP.player.PlayerData.Nickname) == itemMechs);
-                        target.SetData(Serv_RP.player.PlayerData.Fraction, "mechs " + NewNameBuis);
-
-                    }
-
-                }
-            }
+            //foreach (var item in mechs_buisness)
+            //{
+            //    if (item.Name == client.GetData("mechBuisness"))
+            //    {
+            //        client.SetData("mechBuisness", NewNameBuis);
+            //        item.Name = NewNameBuis;
+            //        foreach (var itemMechs in item.WorkersList)
+            //        {
+            //            Client target = NAPI.Pools.GetAllPlayers().Find(pl => pl.GetData(Serv_RP.player.PlayerData.Nickname) == itemMechs);
+            //            target.SetData(Serv_RP.player.PlayerData.Fraction, "mechs " + NewNameBuis);
+            //
+            //        }
+            //
+            //    }
+            //}
 
         }
 

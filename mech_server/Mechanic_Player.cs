@@ -48,7 +48,23 @@ namespace mechanics
             veh1.SetSharedData("targetVehicle", "tow");
             veh2.SetSharedData("vehicle", "tow");
             NAPI.ClientEvent.TriggerClientEventForAll("Sync_Event_Tow_cl");
+            veh1.ResetSharedData("targetVehicle");
+            veh2.ResetSharedData("vehicle");
 
+        }
+
+        [RemoteEvent("Sync_Event_Detach")]
+
+        public void Event_Sync_Detch(Client client, object[] args)
+        {
+            Vehicle veh1 = (Vehicle)args[0];
+            Vehicle veh2 = (Vehicle)args[1];
+            veh1.SetSharedData("currentlyTowedVehicle", "tow");
+            veh2.SetSharedData("vehicle", "tow");
+            NAPI.ClientEvent.TriggerClientEventForAll("Sync_Event_Detach_cl");
+            veh1.ResetSharedData("currentlyTowedVehicle");
+            veh2.ResetSharedData("vehicle");
+            // veh1.ResetSharedData("tow");
         }
 
         //[RemoteEvent("Sync_Window")]
@@ -162,12 +178,12 @@ namespace mechanics
 
         }
 
-        [RemoteEvent("test")]
-        public void test(Client client, object[] args)
-        {
-
-            NAPI.Util.ConsoleOutput("test");
-        }
+       // [RemoteEvent("test")]
+       // public void test(Client client, object[] args)
+       // {
+       //
+       //     NAPI.Util.ConsoleOutput("test");
+       // }
 
 
         [RemoteEvent("Add_Service_Records")]
@@ -176,6 +192,28 @@ namespace mechanics
             Mechanic.AddServiceRecord(client, args[0].ToString(), args[1].ToString(), args[2].ToString(), Convert.ToInt32(args[3].ToString()), args[4].ToString(), args[5].ToString());
 
         }
+
+       //[RemoteEvent("Load_All_Buisness")]
+       //public void LoadAllBuisnessOwner(Client client, object[] args)
+       //{
+       //
+       //    //Mech_Buisness m = Mechanic.LoadBuisness(client);
+       //
+       //    // NAPI.Chat.SendChatMessageToAll(NAPI.Util.ToJson(m));
+       //
+       //    // NAPI.Chat.SendChatMessageToAll(client.GetData(Serv_RP.player.PlayerData.Nickname));
+       //    //if (m != null)
+       //    //{
+       //    List<string> nameList = new List<string>();
+       //    foreach (var item in Mechanic.mechs_buisness)
+       //    {
+       //        if(item.Owner != "username") { 
+       //        nameList.Add(item.Name);
+       //        }
+       //    }
+       //     NAPI.ClientEvent.TriggerClientEvent(client, "LoadBuisOwner", nameList);
+       //    //}
+       //}
 
         [RemoteEvent("Load_Buisness")]
         public void Load_Buisness(Client client, object[] args)
@@ -240,19 +278,7 @@ namespace mechanics
         }
 
 
-        [RemoteEvent("Sync_Event_Detach")]
 
-        public void Event_Sync_Detch(Client client, object[] args)
-        {
-            Vehicle veh1 = (Vehicle)args[0];
-            Vehicle veh2 = (Vehicle)args[1];
-            veh1.SetSharedData("currentlyTowedVehicle", "tow");
-            veh2.SetSharedData("vehicle", "tow");
-            NAPI.ClientEvent.TriggerClientEventForAll("Sync_Event_Detach_cl");
-            veh1.ResetSharedData("currentlyTowedVehicle");
-            veh2.ResetSharedData("vehicle");
-            // veh1.ResetSharedData("tow");
-        }
 
         [RemoteEvent("Find_Player_To_Add")]
         public void FindPlayerToAdd(Client client, object[] args)
@@ -300,7 +326,7 @@ namespace mechanics
         public void SaveMaxCarHealth(Client client, object[] args)
         {
             Vehicle veh = (Vehicle)args[0];
-            Mechanic.SaveMaxVehicleHealth( veh.NumberPlate, Convert.ToInt32(args[1]));
+            Mechanic.SaveMaxVehicleHealth(client, veh.NumberPlate, Convert.ToInt32(args[1]));
         }
         [RemoteEvent("Load_Car_Health")]
         public void LoadCarHealth(Client client, object[] args)
@@ -329,7 +355,7 @@ namespace mechanics
         public void SaveCarMaxBodyHealth(Client client, object[] args)
         {
             Vehicle veh = (Vehicle)args[0];
-            Mechanic.SaveMaxVehicleBodyHealth(veh.NumberPlate, Convert.ToInt32(args[1]));
+            Mechanic.SaveMaxVehicleBodyHealth(client, veh.NumberPlate, Convert.ToInt32(args[1]));
         }
         [RemoteEvent("Load_Car_Body_Health")]
         public void LoadCarBodyHealth(Client client, object[] args)

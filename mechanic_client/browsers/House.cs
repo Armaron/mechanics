@@ -99,11 +99,13 @@ namespace cs_packages.browsers
           
 
             KeyManager.block = 0;
-            Home.Active = false;
-            Home.Destroy();
+            if (Home != null)
+            {
+                Home.Active = false;
+                Home.Destroy();
 
-            Home = null;
-
+                Home = null;
+            }
             Cursor.Visible = false;
 
 
