@@ -77,7 +77,7 @@ namespace mechanic_client
             Notify(args[0].ToString());
         }
 
-        private void SaveDamag(object[] args)
+        public static void SaveDamag(object[] args)
         {
             int veh = GetVehicle(5.0f);
             for (int i = 0; i < 8; i++)
@@ -532,7 +532,7 @@ namespace mechanic_client
             veh_obj.SetBodyHealth(mechanic_client.Ticks_Mechs.TotalMaxBodyHealth);
             veh_obj.SetEngineHealth(mechanic_client.Ticks_Mechs.TotalMaxHealth);
             Events.CallRemote("Sync_BodyShell", veh_obj);
-
+            SaveDamag(null);
         }
 
         static string[] wheelParts = new string[4]
@@ -729,7 +729,7 @@ namespace mechanic_client
                     //  }
                 }
 
-                Events.CallRemote("SaveDamag", veh_obj, Wheel, Window);
+                SaveDamag(null);
             }
         }
 
@@ -839,7 +839,7 @@ namespace mechanic_client
 
 
             }
-            Events.CallRemote("SaveDamag", veh_obj, Wheel, Window);
+            SaveDamag(null);
         }
 
         public static bool[] GetDoors(int targetVeh)

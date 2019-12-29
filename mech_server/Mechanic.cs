@@ -55,11 +55,9 @@ namespace mechanics
         };
 
         //public static List<string> nameList = new List<string>();
-        public static async void MechInit(Client client)
+        public static void MechInit(Client client)
         {
-            await Task.Run((Action)(() =>
-            {
-                client.SetSharedData(Serv_RP.player.PlayerData.Nickname, client.GetData(Serv_RP.player.PlayerData.Nickname));
+            client.SetSharedData(Serv_RP.player.PlayerData.Nickname, client.GetData(Serv_RP.player.PlayerData.Nickname));
             // Mechanic_Player.LoadAllBuisnessOwner(client, null);
 
             //  List<Vehicle> vehicles = NAPI.Pools.GetAllVehicles();
@@ -70,17 +68,17 @@ namespace mechanics
             //      
             //      if (veh_data.Damag != "") { NAPI.ClientEvent.TriggerClientEvent(client, "SetDamag", veh_data.Damag); }
             //  }
-
+            List<string> nameList = new List<string>();
             foreach (var item in mechs_buisness)
             {
-                List<string> nameList = new List<string>();
+
 
                 if (item.Owner != "username")
                 {
                     nameList.Add(item.Name);
                 }
 
-                NAPI.ClientEvent.TriggerClientEvent(client, "LoadBuisOwner", nameList);
+
 
                 //NAPI.Util.ConsoleOutput(item.Name);
                 if (item.Owner == client.GetData(Serv_RP.player.PlayerData.Nickname))
@@ -97,19 +95,18 @@ namespace mechanics
                 {
                     foreach (var workers in item.WorkersList)
                     {
-                        // mechs.Add(new MechsMembersModel(null, item.Name, item.TypeCustoms));
+                       
                         if (workers.Key == client.GetData(Serv_RP.player.PlayerData.Nickname) && workers.Key != item.Owner)
                         {
                             client.SetSharedData(Serv_RP.player.PlayerData.Fraction, "mechs");
                             client.SetData(Serv_RP.player.PlayerData.Fraction, "mechs");
                             client.SetSharedData("typeCustoms", item.TypeCustoms);
-                            // mechs.Add(new MechsMembersModel(client, item.Name, item.TypeCustoms));
+                           
                         }
                     }
-                }     
+                }
             }
-                NAPI.Util.ConsoleOutput(Thread.CurrentThread.ManagedThreadId.ToString());
-            }));
+            NAPI.ClientEvent.TriggerClientEvent(client, "LoadBuisOwner", nameList);
         }
 
         public static void LoadAllBusiness(List<Mech_Buisness> mechs_buis)
@@ -122,7 +119,7 @@ namespace mechanics
                 //Serv_RP.database.DataBase.UpdateMechBusinesOnBD(new Mech_Buisness("buis3"));
                 //  Serv_RP.database.DataBase.UpdateMechBusinesOnBD(new Mech_Buisness("buis1"));
                 mechs_buisness = mechs_buis;
-               
+
 
             }
             else
@@ -162,11 +159,11 @@ namespace mechanics
             {
                 NAPI.Marker.CreateMarker(29, buyCustoms[i], new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f), 1f, new Color(0, 204, 0), true, uint.MaxValue);
                 NAPI.Marker.CreateMarker(0, repairCustoms[i], new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 1f), 1f, new Color(255, 176, 1), true, uint.MaxValue);
-                NAPI.ColShape.CreateSphereColShape(repairCustoms[i],10, 4294967295).SetSharedData("repapairCords", "1");
+                NAPI.ColShape.CreateSphereColShape(repairCustoms[i], 10, 4294967295).SetSharedData("repapairCords", "1");
                 Blip blip = NAPI.Blip.CreateBlip(buyCustoms[i], uint.MaxValue);
                 shape1 = NAPI.ColShape.CreateSphereColShape(buyCustoms[i], 1, 4294967295);
                 shape1.SetSharedData("nameBuis", "buis" + (i + 1));
-                
+
                 blip.ShortRange = true;
                 blip.Name = "Автосервис";
                 blip.Sprite = 402U;
@@ -246,7 +243,6 @@ namespace mechanics
                 NAPI.ClientEvent.TriggerClientEvent(client, "SaveVehicleRecord", veh, v.CarScore, veh.NumberPlate, veh.DisplayName, veh_data.SellDate);
 
             }
-
         }
         public static void MechServciceRecordInit(Vehicle veh)
         {
@@ -297,9 +293,13 @@ namespace mechanics
 
         public static void SaveDamag(string displayName, string numberPlate, string v1, string v2)
         {
-            Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == numberPlate);
-            veh_data.Damag = v1 + ";" + v2;
-            Serv_RP.database.DataBase.SaveStatVehicleOnBD(veh_data);
+            System.Threading.Tasks.Task.Factory.StartNew((Action)(() => NAPI.Task.Run((Action)(() =>
+            {
+                Serv_RP.vehicles.VehicleModel veh_data = Serv_RP.vehicles.VehicleList.vehicles.Find(vehicle => vehicle.PlateNumber == numberPlate);
+                veh_data.Damag = v1 + ";" + v2;
+                Serv_RP.database.DataBase.SaveStatVehicleOnBD(veh_data);
+            }), 0L)));
+
         }
 
         public static void AddToFraction(Client client, string nameBuisness, string typeCustoms)
