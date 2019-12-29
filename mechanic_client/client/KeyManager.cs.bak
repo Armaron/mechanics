@@ -15,25 +15,25 @@ namespace cs_packages.client
     {
 
         /// <summary>
-        /// Блок клавиш вызова элементов интерфейса
-        /// -2  - браузер
-        /// -1  - в авто
-        /// 0 - сброс
-        /// 1 - меню
-        /// 2 - чат
-        /// 3 - анимации
-        /// 4 - инвентарь
-        /// 5 - тату салон
-        /// 6 - макияж
-        /// 7 - банк/банкомат
-        /// 8 - рация
-        /// 9 - магазин
-        /// 10 - телефон
-        /// 11 - крафт
-        /// 12 - персонаж
-        /// 13 - меню авто
-        /// 14 - дом
-        /// 15 - плпнщет
+        /// ���� ������ ������ ��������� ����������
+        /// -2  - �������
+        /// -1  - � ����
+        /// 0 - �����
+        /// 1 - ����
+        /// 2 - ���
+        /// 3 - ��������
+        /// 4 - ���������
+        /// 5 - ���� �����
+        /// 6 - ������
+        /// 7 - ����/��������
+        /// 8 - �����
+        /// 9 - �������
+        /// 10 - �������
+        /// 11 - �����
+        /// 12 - ��������
+        /// 13 - ���� ����
+        /// 14 - ���
+        /// 15 - �������
         /// </summary>
         public static int block = 0;
         public static RAGE.Elements.Player player;
@@ -92,9 +92,6 @@ namespace cs_packages.client
         static KeyManager()
         {
             Events.Add("KeyIpress", KeyIPress);
-            Events.Add("KeyJpress", KeyJPress);
-            Events.Add("KeyF3press", KeyF3press);
-            Events.Add("KeyIpress", KeyIPress);
             Events.Add("KeyOpress", KeyOPress);
             Events.Add("KeyLpress", KeyLPress);
             Events.Add("KeyKpress", KeyKPress);
@@ -112,66 +109,7 @@ namespace cs_packages.client
             Events.Add("KeyXpressDown", KeyXpressDown);
             Events.Add("KeyPolice", KeyPolice);
             Events.Add("KeyCtrlpress", KeyCtrlpress);
-            Events.Add("KeyZpress", KeyZpress);
 
-        }
-
-        private static void KeyF3press(object[] args)
-        {
-            Action act = () =>
-            {
-               // if (block == 0)
-               // {
-                    if (mechanic_client.Ticks_Mechs.openRepair)
-                    {
-                        mechanic_client.Ticks_Mechs.keyFixBodyShell = true;
-                    }
-
-                    if (mechanic_client.Mechanic_Client.Open && mechanic_client.Mechanic_Client.Cursor)
-                    {
-
-                        RAGE.Ui.Cursor.Visible = true;
-                        mechanic_client.Mechanic_Client.Cursor = false;
-                    }
-            };
-
-            KeyBind(act);
-        }
-
-        private static void KeyJPress(object[] args)
-        {
-
-            Action act = () =>
-            {
-
-                if (block == 0)
-                {
-                    if (mechanic_client.Ticks_Mechs.openRepair)
-                    {
-                        mechanic_client.Ticks_Mechs.keyfixWind = true;
-                    }
-                }
-
-            };
-            KeyBind(act);
-        }
-
-        private static void KeyZpress(object[] args)
-        {
-            Action act = () =>
-            {
-
-                if (block == 0)
-                {
-                    if (mechanic_client.Ticks_Mechs.openRepair || mechanic_client.Mechanic_Client.ActiveDiag || mechanic_client.Mechanic_Client.ActiveRepairKitCitizen)
-                    {
-                        mechanic_client.Ticks_Mechs.keyfixEng = true;
-                    }
-                }
-
-            };
-
-            KeyBind(act);
         }
 
 
@@ -200,20 +138,9 @@ namespace cs_packages.client
 
         public static void KeyKPress(object[] args)
         {
-
-
-
-
             Action act = () =>
             {
-                Chat.Output("K");
-                if (vehicle.Vehicle.CarMenu != null)
-                {
-                    Chat.Output("Close");
-                    vehicle.Vehicle.OpenCarMenu(null);
-                    return;
-                }
-                int veh = mechanic_client.Mechanic_Client.GetVehicle(10.0f);
+                int veh = GetVehicle(10.0f);
                 uint modelVeh = RAGE.Game.Entity.GetEntityModel(veh);
                 Vector3 coords_b = new Vector3();
                 List<Vehicle> vehicles = Entities.Vehicles.All;
@@ -273,8 +200,35 @@ namespace cs_packages.client
             };
 
             KeyBind(act);
+
+            // ��������� ��� �������� �� ������
+
         }
 
+        public static int GetVehicle(float radius)
+        {
+            Vector3 pos = Player.LocalPlayer.Position;
+            if (Player.LocalPlayer.IsSittingInAnyVehicle())
+            {
+                return Player.LocalPlayer.GetVehicleIsIn(true);
+            }
+            else
+            {
+                int veh = RAGE.Game.Vehicle.GetClosestVehicle(pos.X + 0.0001f, pos.Y + 0.0001f, pos.Z + 0.0001f, radius + 0.0001f, 0, 8192 + 4096 + 4 + 2 + 1);
+                if (!RAGE.Game.Entity.IsEntityAVehicle(veh))
+                {
+                    veh = RAGE.Game.Vehicle.GetClosestVehicle(pos.X + 0.0001f, pos.Y + 0.0001f, pos.Z + 0.0001f, radius + 0.0001f, 0, 4 + 2 + 1);
+                    return veh;
+                }
+                else
+                {
+                    return veh;
+                }
+
+
+            }
+
+        }
 
         public static void KeyCtrlpress(object[] args)
         {
@@ -354,7 +308,7 @@ namespace cs_packages.client
 
             Action act = () =>
             {
-                if (block == 0 || block == 1)
+                if (block == 4 || block == 0)
                     if (Inventory.give)
                     {
                         Inventory.GiveTrue();
@@ -364,14 +318,12 @@ namespace cs_packages.client
                         Events.CallRemote("NotifyClient");
                     }
 
-                if (mechanic_client.Ticks_Mechs.openRepair || mechanic_client.Mechanic_Client.ActiveDiag || mechanic_client.Mechanic_Client.ActiveRepairKitCitizen)
-                {
-                    mechanic_client.Ticks_Mechs.keyfixBody = true;
-                }
-
             };
 
             KeyBind(act);
+
+
+
 
 
 
@@ -484,7 +436,7 @@ namespace cs_packages.client
         public static void KeyPolice(object[] args)
         {
             Chat.Output("Enter in method");
-            if (block == 0 || block == 1 || block == 6)
+            if (block == 0 || block == 12)
             {
                 Chat.Output("block disabled");
                 Action act = () =>
@@ -519,13 +471,12 @@ namespace cs_packages.client
 
         public static void KeyNpress(object[] args)
         {
-            if (block == 0 || block == 1)
+            if (block == 15 || block == 0 || block == 1)
             {
                 Action act = () =>
             {
                 DrawInfo.LoadScreen = true;
                 Tablet.InPDVehicle();
-                mechanic_client.Tablet.OpenCloseMech(null);
 
             };
 
@@ -562,7 +513,7 @@ namespace cs_packages.client
         public static void Cars()
         {
 
-            if (block == 5 || block == 0 || block == 1)
+            if (block == 13 || block == 0 || block == 1)
             {
                 RAGE.Elements.Vehicle vehicle = null;
                 if (!RAGE.Elements.Player.LocalPlayer.IsInAnyVehicle(false))
@@ -623,11 +574,11 @@ namespace cs_packages.client
 
         public static void KeyLPress(object[] args)
         {
-            if (block == 4 || block == 0)
+            if (block == 3 || block == 0)
             {
                 Action act = () =>
             {
-                //browsers.Phone.OpenClose();k
+                //browsers.Phone.OpenClose();
                 Menu.OpenAnimList();
 
             };
@@ -652,17 +603,6 @@ namespace cs_packages.client
                     //browsers.Phone.OpenClose();
                     Events.CallRemote("MoveToMarker");
 
-                    if (mechanic_client.Ticks_Mechs.onCoods && RAGE.Game.Vehicle.IsVehicleSeatFree(mechanic_client.Ticks_Mechs.veh, -1, 0))
-                    {
-                        mechanic_client.Ticks_Mechs.openRepair = true;
-                    }
-
-                    mechanic_client.Mechanic_Client.OpenTuningWindow();
-                    if (mechanic_client.Ticks_Mechs.openRepair || mechanic_client.Mechanic_Client.ActiveDiag || mechanic_client.Mechanic_Client.ActiveRepairKitCitizen)
-                    {
-                        mechanic_client.Ticks_Mechs.keyfixWheel = true;
-                    }
-
                 };
 
                 KeyBind(act);
@@ -676,11 +616,13 @@ namespace cs_packages.client
         public static void KeyOPress(object[] args)
         {
 
-            if (block == 0 || block == 1)
+            if (block == 0)
             {
                 Action act = () =>
                 {
-                    RadioStation.Open();
+                    DrawInfo.LoadScreen = true;
+                    //browsers.Phone.OpenClose();
+                    Events.CallRemote("CarInvOpenClient");
 
                 };
 
@@ -728,7 +670,7 @@ namespace cs_packages.client
         {
 
 
-            if (block == 0 || block == 10)
+            if (block == 1 || block == 0)
             {
                 Action act = () =>
                 {

@@ -45,7 +45,7 @@ namespace cs_packages.browsers
                 //menuActive = true;
                 //bBind();
                 //cefActive = true;
-                KeyManager.block = 11;
+                KeyManager.block = 2;
             }
             else
             {

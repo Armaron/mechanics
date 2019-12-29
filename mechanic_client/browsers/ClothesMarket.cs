@@ -55,7 +55,7 @@ namespace cs_packages.browsers
         public void Open(object[] args)
         {
 
-            KeyManager.block = 5;
+            KeyManager.block = 2;
             salon = new HtmlWindow("package://auth/assets/clothes.html");
             salon.Active = true;
             //   Chat.Output(args[0].ToString());

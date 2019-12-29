@@ -52,7 +52,7 @@ namespace cs_packages.browsers
         }
         public void OpenTatooSalon(object[] args)
         {
-            KeyManager.block = 5;
+            KeyManager.block = 2;
             salon = new HtmlWindow("package://auth/assets/tattoo.html");
             salon.Active = true;
 

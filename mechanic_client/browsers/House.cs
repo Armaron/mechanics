@@ -41,7 +41,7 @@ namespace cs_packages.browsers
                 int countgarage = (int)args[2];
                 float invweight = (float)args[3];
                 housenum = (int)args[4];
-                KeyManager.block = 14;
+                KeyManager.block = 2;
                 Home = new HtmlWindow("package://auth/assets/buyApartament.html");
                 Home.Active = true;
                 //   Chat.Output(args[0].ToString());
@@ -178,7 +178,7 @@ namespace cs_packages.browsers
             int priceOf = Convert.ToInt32(args[2]);
             housenum = (int)args[3];
 
-            KeyManager.block = 14;
+            KeyManager.block = 2;
             Home = new HtmlWindow("package://auth/assets/sellApartament.html");
             Home.Active = true;
             //   Chat.Output(args[0].ToString());
@@ -206,12 +206,14 @@ namespace cs_packages.browsers
         {
 
             KeyManager.block = 0;
-
-            Home.Active = false;
-            //   Chat.Output(args[0].ToString());
-            Home.Destroy();
-            Home = null;
-            Cursor.Visible = false;
+            if (Home != null)
+            {
+                Home.Active = false;
+                //   Chat.Output(args[0].ToString());
+                Home.Destroy();
+                Home = null;
+            }
+                Cursor.Visible = false;
 
         }
         public void Come(object[] args)

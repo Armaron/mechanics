@@ -9,6 +9,7 @@ namespace mech_server
     {
        
         public string Name { get; set; }
+        public string NameB { get; set; }
         public string Owner { get; set; }
         public int Gain { get; set; }
         public int TrucksCount { get; set; }
@@ -27,9 +28,10 @@ namespace mech_server
         }
 
 
-        public Mech_Buisness(Client client, string Name, string Owner, int Gain, int TrucksCount, SortedList<string, string> WorkersList, string typeCustoms)
+        public Mech_Buisness(Client client, string Name, string NameB, string Owner, int Gain, int TrucksCount, SortedList<string, string> WorkersList, string typeCustoms)
         {
             this.Name = Name;
+            this.NameB = NameB;
             this.Owner = Owner;
             this.Gain = Gain;
             this.TrucksCount = TrucksCount;

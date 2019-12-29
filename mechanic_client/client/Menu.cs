@@ -108,7 +108,7 @@ namespace cs_packages.client
                 //menuActive = true;
                 //bBind();
                 //cefActive = true;
-                KeyManager.block = 1;
+                KeyManager.block = 10;
             }
             else
             {
@@ -133,7 +133,7 @@ namespace cs_packages.client
                 Cursor.Visible = true;
 
                 animCircleCef.Active = true;
-                KeyManager.block = 3;
+                KeyManager.block = 4;
 
             }
             else

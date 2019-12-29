@@ -20,7 +20,7 @@ namespace cs_packages.browsers
 
         public static void OpenDocument(object[] args)
         {
-            KeyManager.block = 7;
+            KeyManager.block = 2;
             string[] tr = JsonConvert.DeserializeObject<string[]>(args[3].ToString());
 
             if (args[1].ToString() == null || args[1].ToString() == "")

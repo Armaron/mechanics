@@ -46,7 +46,7 @@ namespace cs_packages.browsers
             //Chat.Output("phoneNumber " + args[4]);
             
 
-            KeyManager.block = 7;
+            KeyManager.block = 2;
             terminal = new HtmlWindow("package://auth/assets/cashpoint.html");
             terminal.Active = true;
             //cashpointInit(card,cash,terminal,maxwithdrawal,phoneNumber)

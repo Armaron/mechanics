@@ -74,9 +74,9 @@ namespace cs_packages.vehicle
             AutoSchoolBrowser.Active = true;
             //   Chat.Output(args[0].ToString());
             //AutoSchoolBrowser.ExecuteJs("pushAutoSchool('" + args[0].ToString() + "','" + "names" + "');");
-            string[] mass = new string[] { "false", "false", "false" };
-            string json = JsonConvert.SerializeObject(mass);
-            AutoSchoolBrowser.ExecuteJs("initSchool(" + json + ");");
+         //   string[] mass = new bool[] { "true", "true", "true" };
+       //     string json = JsonConvert.SerializeObject(mass);
+            AutoSchoolBrowser.ExecuteJs("initSchool('true','true');");
             Cursor.Visible = true;
             //  AutoSchool.AutoSchoolItems(null);
 

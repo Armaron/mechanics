@@ -260,7 +260,7 @@ public class Inventory : Events.Script
             //menuActive = true;
             //bBind();
             //cefActive = true;
-            KeyManager.block = 4;
+            KeyManager.block = 3;
             DrawInfo.LoadScreen = false;
         }
         else

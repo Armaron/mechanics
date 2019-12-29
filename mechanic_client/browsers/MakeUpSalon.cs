@@ -67,7 +67,7 @@ namespace cs_packages.browsers
 
         public void OpenMakeUpSalon(object[] args)
         {
-            KeyManager.block = 6;
+            KeyManager.block = 2;
             salonM = new HtmlWindow("package://auth/assets/makeup.html");
             salonM.Active = true;
             Chat.Show(false);

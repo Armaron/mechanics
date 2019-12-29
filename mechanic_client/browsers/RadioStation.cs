@@ -30,7 +30,7 @@ namespace cs_packages.browsers
         {
             if (radio == null)
             {
-                KeyManager.block = 8;
+                KeyManager.block = 7;
                 radio = new HtmlWindow("package://auth/assets/raciya.html");
                 radio.Active = true;
 

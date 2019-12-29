@@ -35,13 +35,13 @@ namespace cs_packages.browsers
             Events.Add("giveLicence", GiveLicence);
             Events.Add("entryToThing", EntryToThing);
             Events.Add("addViolator", AddViolator);
-         //   Events.Add("addViolationThing", AddViolationThing);
+            //   Events.Add("addViolationThing", AddViolationThing);
             Events.Add("person", Persons);
             Events.Add("sellContactAuthData", SellContactAuthData);
             Events.Add("AddPoliceMark", AddPoliceMark);
             Events.Add("AddMedicMark", AddMedicMark);
             Events.Add("MoveTo", MoveTo);
-           // Events.Add("reviveThing", ReviveThing);
+            // Events.Add("reviveThing", ReviveThing);
             Events.Add("SellContactAuthDataServer", SellContactAuthDataServer);
             Events.Add("addViolationThing", AddViolationThing);
             Events.Add("punishmentStatus", PunishmentStatus);
@@ -83,9 +83,9 @@ namespace cs_packages.browsers
 
         public void HaveUpdate(object[] args)
         {
-            
-            if(phone!=null)
-            phone.ExecuteJs("reloadNotebook();");
+
+            if (phone != null)
+                phone.ExecuteJs("reloadNotebook();");
         }
         public void GetUpdate(object[] args)
         {
@@ -107,14 +107,14 @@ namespace cs_packages.browsers
         public void AddThing(object[] args)
         {
             Events.CallRemote("AddThingServer", args[0]);
-            
+
 
         }
         public void ViewClews(object[] args)
         {
-            Events.CallRemote("ViewClews", args[0],args[1]);
+            Events.CallRemote("ViewClews", args[0], args[1]);
             OpenClose(null);
-            
+
         }
         public void ReviveThing(object[] args)
         {
@@ -126,11 +126,11 @@ namespace cs_packages.browsers
         }
         public void PunishmentStatus(object[] args)
         {
-            Events.CallRemote("PunishmentStatus", args[0], args[1],args[2]);
+            Events.CallRemote("PunishmentStatus", args[0], args[1], args[2]);
         }
         public void AddViolationThing(object[] args)
         {
-            Events.CallRemote("AddViolationThing", args[0],args[1]);
+            Events.CallRemote("AddViolationThing", args[0], args[1]);
         }
         public void SellContactAuthData(object[] args)
         {
@@ -139,14 +139,14 @@ namespace cs_packages.browsers
         public void SellContactAuthDataServer(object[] args)
         {
             string data = args[0].ToString();
-            phone.ExecuteJs("adsSendData('"+data+"');");
+            phone.ExecuteJs("adsSendData('" + data + "');");
         }
         public void MoveTo(object[] args)
         {
             Vector3 vector3 = new Vector3(Convert.ToSingle(args[0]), Convert.ToSingle(args[1]), Convert.ToSingle(args[2]));
-            RAGE.Elements.Player.LocalPlayer.TaskGoToCoordAnyMeans(vector3.X,vector3.Y,vector3.Z,1f,0,false, 786603, 0xbf800000);
+            RAGE.Elements.Player.LocalPlayer.TaskGoToCoordAnyMeans(vector3.X, vector3.Y, vector3.Z, 3f, 0, false, 786603, 0xbf800000);
             //Chat.Output("Trigger come");
-           // Events.CallRemote("HireNewbie", args[0]);
+            // Events.CallRemote("HireNewbie", args[0]);
         }
         //public void ReviveThing(object[] args)
         //{
@@ -178,15 +178,15 @@ namespace cs_packages.browsers
             Colshape colshape = new SphereColshape(vector3, 1.0f, globalDimension);
             colshape.SetData("SenderPhoneNumber", 00);
 
-             Phone.blips.Add(blip);
-             Phone.colshapes.Add(colshape);
+            Phone.blips.Add(blip);
+            Phone.colshapes.Add(colshape);
 
         }
 
 
         public void SearchPerson(object[] args)
         {
-             //Chat.Output("Trigger come");
+            //Chat.Output("Trigger come");
             Events.CallRemote("SearchPerson", args[0]);
         }
         public void Persons(object[] args)
@@ -195,7 +195,7 @@ namespace cs_packages.browsers
 
             phone.ExecuteJs("personInit('" + args[0].ToString() + "');");
 
-         
+
         }
         //public void AddViolationThing(object[] args)
         //{
@@ -308,9 +308,9 @@ namespace cs_packages.browsers
 
 
                 phone = new HtmlWindow("package://auth/assets/policeNotebook.html");
-                phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','" + args[1].ToString() + "','" + args[2].ToString() + "','" + args[3].ToString() + "','"+args[4].ToString() + "','admin','" + args[5].ToString() + "');");
+                phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','" + args[1].ToString() + "','" + args[2].ToString() + "','" + args[3].ToString() + "','" + args[4].ToString() + "','admin','" + args[5].ToString() + "');");
                 // phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "',filer, archive," +  "'"+args[3].ToString() + "'," + true + ");");
-                KeyManager.block = 15;
+                KeyManager.block = 9;
                 Chat.Show(false);
 
                 phone.Active = true;
@@ -328,13 +328,13 @@ namespace cs_packages.browsers
             {
                 phone.Reload(true);
 
-              
+
                 phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','" + args[1].ToString() + "','" + args[2].ToString() + "','" + args[3].ToString() + "','" + args[4].ToString() + "','admin','" + args[5].ToString() + "');");
                 // phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "',filer, archive," +  "'"+args[3].ToString() + "'," + true + ");");
-               
 
 
-               // phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','" + args[1].ToString() + "','" + args[2].ToString() + "','" + args[3].ToString() + "','admin');");
+
+                // phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','" + args[1].ToString() + "','" + args[2].ToString() + "','" + args[3].ToString() + "','admin');");
             }
         }
         public static void OpenCloseNoteMed(object[] args)
@@ -348,14 +348,14 @@ namespace cs_packages.browsers
                 phone = new HtmlWindow("package://auth/assets/medicalNotebook.html");
                 phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','admin');");
                 // phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "',filer, archive," +  "'"+args[3].ToString() + "'," + true + ");");
-                KeyManager.block = 15;
+                KeyManager.block = 9;
                 Chat.Show(false);
 
                 phone.Active = true;
 
 
                 Cursor.Visible = true;
-                KeyManager.block = 15;
+                KeyManager.block = 9;
 
 
 
@@ -365,7 +365,7 @@ namespace cs_packages.browsers
             else
             {
                 phone.Reload(true);
-                KeyManager.block = 15;
+                KeyManager.block = 9;
 
                 phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "','admin');");
                 // phone.ExecuteJs("pushNotebook('" + args[0].ToString() + "',filer, archive," +  "'"+args[3].ToString() + "'," + true + ");");
@@ -387,7 +387,8 @@ namespace cs_packages.browsers
                         Events.CallRemote("GetCarPoliceNote");
                     }
                 }
-            }else
+            }
+            else
             {
                 OpenClose(null);
             }
@@ -395,57 +396,57 @@ namespace cs_packages.browsers
 
 
 
-          public static void OpenClose(object[] args)
+        public static void OpenClose(object[] args)
         {
             if (RAGE.Elements.Player.LocalPlayer.GetSharedData("mechBuisness") == null)
             {
 
-            if (phone == null)
-            {
-
-            
-
-                //  RAGE.Elements.Player.LocalPlayer.TaskUseMobilePhoneTimed(100);
-
-
-                phone = new HtmlWindow("package://auth/assets/tablet.html");
-                //    RAGE.Game.Mobile.DisablePhoneThisFrame(true);
-                //     RAGE.Game.Mobile.SetPhoneLean(true);//поворрот экрана
-                ///  RAGE.Elements.Player.LocalPlayer.PlayAnim("static", "amb@code_human_wander_mobile@male@base", 1f, true, true, true, 1f, 8);
-                // RAGE.Elements.Player.LocalPlayer.TaskPlayPhoneGestureAnimation("amb@code_human_wander_mobile@male@base", "static", "BONEMASK_HEAD_NECK_AND_R_ARM",
-                //   0.5f,0.25f,true,true);
-
-                KeyManager.block = 10;
-                Chat.Show(false);
-                phone.Active = true;
-
-                Cursor.Visible = true;
-
-                //// phone.ExecuteJs("settingsInitialize(" + 7 + ");");
-                //Chat.Output(args[0].ToString());
-                //Chat.Output(args[1].ToString());
-
-                DrawInfo.LoadScreen = false;
-
-
-            }
-            else
-            {
-
-                KeyManager.block = 0;
-                Chat.Show(true);
-
-                phone.Active = false;
-                Cursor.Visible = false;
-
-                phone = null;
-                if(RAGE.Elements.Player.LocalPlayer.Vehicle==null)
+                if (phone == null)
                 {
-                    Events.CallLocal("freezestop");
-                    Events.CallRemote("stopAnimationPD");//  client.TriggerEvent("freeze");
-                }
 
-            }  
+
+
+                    //  RAGE.Elements.Player.LocalPlayer.TaskUseMobilePhoneTimed(100);
+
+
+                    phone = new HtmlWindow("package://auth/assets/tablet.html");
+                    //    RAGE.Game.Mobile.DisablePhoneThisFrame(true);
+                    //     RAGE.Game.Mobile.SetPhoneLean(true);//поворрот экрана
+                    ///  RAGE.Elements.Player.LocalPlayer.PlayAnim("static", "amb@code_human_wander_mobile@male@base", 1f, true, true, true, 1f, 8);
+                    // RAGE.Elements.Player.LocalPlayer.TaskPlayPhoneGestureAnimation("amb@code_human_wander_mobile@male@base", "static", "BONEMASK_HEAD_NECK_AND_R_ARM",
+                    //   0.5f,0.25f,true,true);
+
+                    KeyManager.block = 9;
+                    Chat.Show(false);
+                    phone.Active = true;
+
+                    Cursor.Visible = true;
+
+                    //// phone.ExecuteJs("settingsInitialize(" + 7 + ");");
+                    //Chat.Output(args[0].ToString());
+                    //Chat.Output(args[1].ToString());
+
+                    DrawInfo.LoadScreen = false;
+
+
+                }
+                else
+                {
+
+                    KeyManager.block = 0;
+                    Chat.Show(true);
+
+                    phone.Active = false;
+                    Cursor.Visible = false;
+
+                    phone = null;
+                    if (RAGE.Elements.Player.LocalPlayer.Vehicle == null)
+                    {
+                        Events.CallLocal("freezestop");
+                        Events.CallRemote("stopAnimationPD");//  client.TriggerEvent("freeze");
+                    }
+
+                }
             }
         }
 

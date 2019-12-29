@@ -13,21 +13,6 @@ namespace mechanics
     {
 
 
-        // [Command("savename", "name", SensitiveInfo = true, GreedyArg = true)]
-        // public void save(Client player, string name)
-        // {
-        //
-        //     player.SetSharedData(Serv_RP.player.PlayerData.Nickname, name);
-        //     player.SetData(Serv_RP.player.PlayerData.Nickname, name);
-        // }
-        //
-        // [Command("help")]
-        // public void help(Client player)
-        // {
-        //    
-        //     NAPI.Chat.SendChatMessageToPlayer(player, "[/savename <имя>, /service <капс модель машины>, .burst-поломать машину, .bdoor - сломать двери, .tow- погрузить машину, .weapon- пистолет, .diag- дигностика на выезде, .repairkit - починка, /tp - тп по метке, /tpc- тп по коорд, f2- noclip]");
-        // }
-
          [Command("delb")]
          public void DelBuis(Client player)
          {
@@ -160,9 +145,9 @@ namespace mechanics
         {
             Vehicle veh = (Vehicle)args[0];
             int EngH = Convert.ToInt32(args[1].ToString());
-            //veh.SetSharedData("targetVehicleFixEng", "fixEng");
+           
             NAPI.ClientEvent.TriggerClientEventForAll("syncFixEng",veh, EngH);
-           // veh.ResetSharedData("targetVehicleFixEng");
+
         }
 
         [RemoteEvent("Add_New_Buisness")]
@@ -173,17 +158,10 @@ namespace mechanics
             
             if (m == null)
             {
-                Mechanic.AddBuisness(client, client.GetData(Serv_RP.player.PlayerData.Nickname), args[1].ToString(), args[2].ToString());
+                Mechanic.AddBuisness(client, client.GetData(Serv_RP.player.PlayerData.Nickname), args[1].ToString(), args[2].ToString(), args[3].ToString());
             }
 
         }
-
-       // [RemoteEvent("test")]
-       // public void test(Client client, object[] args)
-       // {
-       //
-       //     NAPI.Util.ConsoleOutput("test");
-       // }
 
 
         [RemoteEvent("Add_Service_Records")]
@@ -192,28 +170,6 @@ namespace mechanics
             Mechanic.AddServiceRecord(client, args[0].ToString(), args[1].ToString(), args[2].ToString(), Convert.ToInt32(args[3].ToString()), args[4].ToString(), args[5].ToString());
 
         }
-
-       //[RemoteEvent("Load_All_Buisness")]
-       //public void LoadAllBuisnessOwner(Client client, object[] args)
-       //{
-       //
-       //    //Mech_Buisness m = Mechanic.LoadBuisness(client);
-       //
-       //    // NAPI.Chat.SendChatMessageToAll(NAPI.Util.ToJson(m));
-       //
-       //    // NAPI.Chat.SendChatMessageToAll(client.GetData(Serv_RP.player.PlayerData.Nickname));
-       //    //if (m != null)
-       //    //{
-       //    List<string> nameList = new List<string>();
-       //    foreach (var item in Mechanic.mechs_buisness)
-       //    {
-       //        if(item.Owner != "username") { 
-       //        nameList.Add(item.Name);
-       //        }
-       //    }
-       //     NAPI.ClientEvent.TriggerClientEvent(client, "LoadBuisOwner", nameList);
-       //    //}
-       //}
 
         [RemoteEvent("Load_Buisness")]
         public void Load_Buisness(Client client, object[] args)
@@ -226,32 +182,9 @@ namespace mechanics
            // NAPI.Chat.SendChatMessageToAll(client.GetData(Serv_RP.player.PlayerData.Nickname));
             if (m != null)
             {
-                NAPI.ClientEvent.TriggerClientEvent(client, "LoadBuisnessPage", m.Name, m.Owner, m.Gain, m.TrucksCount, m.WorkersList, m.TypeCustoms);
+                NAPI.ClientEvent.TriggerClientEvent(client, "LoadBuisnessPage", m.NameB, m.Owner, m.Gain, m.TrucksCount, m.WorkersList, m.TypeCustoms);
             }
         }
-
-        // [ServerEvent(Event.PlayerExitVehicleAttempt)]
-        // public void VehStreamExitAttempt(Client player, Vehicle veh)
-        // {
-        //     //NAPI.ClientEvent.TriggerClientEvent(player, "SaveVehicleRecord", veh);
-        // }
-
-
-        // [ServerEvent(Event.PlayerExitVehicle)]
-        // public void VehStreamExit(Client player, Vehicle veh)
-        // {
-        //     VehicleDetails v = Mechanic.LoadServiceRecord(player, veh.DisplayName.ToUpper(), "1231231");
-        //    // NAPI.Chat.SendChatMessageToAll(veh.DisplayName.ToUpper());
-        //     if (v!= null) { 
-        //     NAPI.ClientEvent.TriggerClientEvent(player, "SaveVehicleRecord", veh, v.CarScore);
-        //        // NAPI.Chat.SendChatMessageToAll(veh.DisplayName + " " + v.carScore);
-        //     }
-        //     else
-        //     {
-        //         NAPI.ClientEvent.TriggerClientEvent(player, "SaveVehicleRecord", veh, 0);
-        //     }
-        //    Mechanic.SaveVehicleHealth(player, NAPI.Vehicle.GetVehicleDisplayName((VehicleHash)veh.Model), "1231231", (int)veh.Health);
-        // }
 
 
         [Command("service", "name", SensitiveInfo = true, GreedyArg = true)]
@@ -443,36 +376,6 @@ namespace mechanics
             veh.SecondaryColor = Convert.ToInt32(Convert.ToInt32(args[1]));
         }
 
-        //test
-       // private Vector3 XyInFrontOfPos(Vector3 pos, float heading, float dist)
-       // {
-       //     heading *= (float)(Math.PI / 180);
-       //     pos.X += (float)(dist * Math.Sin(-heading));
-       //     pos.Y += (float)(dist * Math.Cos(-heading)); ;
-       //     return pos;
-       // }
-       //
-       // [Command("spaw", "vehicle", SensitiveInfo = true, GreedyArg = true)]
-       // public void SpawnVehicle(Client player, string vehicle)
-       // {
-       //     SpawnVeh(player, vehicle);
-       //
-       // }
-       //
-       // //test
-       // private void SpawnVeh(Client client, string vehicle)
-       // {
-       //     Vector3 pos = XyInFrontOfPos(client.Position, client.Heading, 3.0f);
-       //
-       //     Vehicle myVeh1 = NAPI.Vehicle.CreateVehicle(NAPI.Util.GetHashKey(vehicle), pos, 0f, 0, 0, numberPlate: "aaa1");
-       //     if (myVeh1 != null)
-       //     {
-       //
-       //         myVeh1.Repair();
-       //         myVeh1.Position = pos;
-       //         myVeh1.Dimension = client.Dimension;
-       //
-       //     }
-        //}
+        
     }
 }

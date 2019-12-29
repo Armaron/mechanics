@@ -99,29 +99,46 @@ namespace cs_packages.player
         }
         public static void DeleteText()
         {
-            try
-            {if (textLabel != null)
+           
+                if (textLabel != null)
                 {
                     togle = false;
                     textLabel.Destroy();
                     textLabel = null;
                 }
-            }
-            catch
-            {
-
-            }
+           
         }
         public static void Draw(object[] arg)
         {
             if (Menu.ready)
             {
                 RAGE.Game.Player.SetPlayerHealthRechargeMultiplier(0.0f);
-
+            //    Chat.Output(KeyManager.block.ToString());
                // GameMaster.CheckPlayer();
 
+               //if(RAGE.Game.Ui.IsTextChatActive())
+               // {
+               //     if(KeyManager.block!=99)
+               //     {
+               //         KeyManager.block = 99;
+               //     }
+               // }
+               //else
+               // {
+               //     if(KeyManager.block == 99)
+               //     {
+               //         KeyManager.block = 0;
+               //     }
+               // }
+               if(RAGE.Elements.Player.LocalPlayer.Vehicle!=null)
+                {
+                  if(KeyManager.block == 0)  KeyManager.block = 1;
+                }
+                else
+                {
+                    if (KeyManager.block == 1) KeyManager.block = 0;
 
-
+                }
 
                 player.VoiceChat.VoiceProcess();
                 if (playerLight)
@@ -131,13 +148,17 @@ namespace cs_packages.player
                     {
                         try
                         {
-                            textLabel.Position = new Vector3(target.Position.X, target.Position.Y, target.Position.Z - 1.2f);
-                            if(Math.Abs(textLabel.Position.DistanceTo(RAGE.Elements.Player.LocalPlayer.Position) )>  5f)
+
+                            if (textLabel != null && target != null)
                             {
-                                g = -1;
-                                DeleteText();
-                                playerLight = false;
-                                KeyManager.player = null;
+                                textLabel.Position = new Vector3(target.Position.X, target.Position.Y, target.Position.Z - 1.2f);
+                                if (Math.Abs(textLabel.Position.DistanceTo(RAGE.Elements.Player.LocalPlayer.Position)) > 5f)
+                                {
+                                    g = -1;
+                                    DeleteText();
+                                    playerLight = false;
+                                    KeyManager.player = null;
+                                }
                             }
                         }
                         catch
@@ -171,6 +192,11 @@ namespace cs_packages.player
                     playerLight = false;
                     KeyManager.player = null;
                 }
+                else
+                {
+                    DeleteText();
+                }
+               
 
                 if (LoadScreen)
                 {

@@ -59,7 +59,7 @@ namespace cs_packages.browsers
         }
         public void CloseMenu(object[] args)
         {
-            KeyManager.block = 0;
+            KeyManager.block = 2;
             Chat.Show(true);
 
             MedCardHtml.Active = false;
@@ -82,7 +82,7 @@ namespace cs_packages.browsers
             string name = args[0].ToString();
             var elem = new { title = name, view = MedCard };
             Chat.Show(false);
-            KeyManager.block = 76;
+            KeyManager.block = 2;
             MedCardHtml.ExecuteJs("pushPersonalCard('"+JsonConvert.SerializeObject(elem)+"')");
             MedCardHtml.Active = true;
             Cursor.Visible = true;
@@ -92,7 +92,7 @@ namespace cs_packages.browsers
             MedCardHtml = new HtmlWindow("package://auth/assets/operationMenu.html");
 
             string room = args[0].ToString();
-            KeyManager.block = 76;
+            KeyManager.block = 2;
 
             MedCardHtml.ExecuteJs("pushRoom('" + room + "')");
             MedCardHtml.Active = true;

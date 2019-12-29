@@ -8,7 +8,7 @@ namespace cs_packages.vehicle
 {
     public class Speed
     {
-       RAGE.Elements.Player localPlayer;
+      
         public HtmlWindow speedometrCef = null;
         bool speedActive = false;
         public int maxfuelincar = 0;
@@ -28,7 +28,7 @@ namespace cs_packages.vehicle
 
         public Speed()
         {
-            //Phone.EnterVehicle(null);
+            Phone.EnterVehicle(null);
             RAGE.Elements.Player localPlayer = RAGE.Elements.Player.LocalPlayer;
             //  Events.Add("speedometr.client", Speedometr);
             Events.Add("FuelUp", FuelUp);
@@ -212,7 +212,7 @@ namespace cs_packages.vehicle
         }
         public void DestroyCef()
         {
-            //Phone.ExitVehicle(null);
+            Phone.ExitVehicle(null);
             Events.CallRemote("ExitVehicle", fuelLevel, bodyHealth, engHealth, true);
             speedometrCef.Destroy();
 

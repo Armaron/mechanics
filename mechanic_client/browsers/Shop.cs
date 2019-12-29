@@ -29,7 +29,7 @@ namespace cs_packages.browsers
 
         public void OpenShop(object[] args)
         {
-            KeyManager.block = 9;
+            KeyManager.block = 2;
             shop = new HtmlWindow("package://auth/assets/shop.html");
             shop.Active = true;
             if (args[0].ToString() != "ammo")

@@ -50,7 +50,7 @@ namespace cs_packages.browsers
         public void OpenSellBusinessPanel(object[] args)
         {
           //  Chat.Output("BizLoad...");
-			KeyManager.block = 5;
+			KeyManager.block = 2;
             BusinesBrowser = new HtmlWindow("package://auth/assets/buyBusiness.html");
             BusinesBrowser.Active = true;
          // //  Chat.Output(args[0].ToString());
@@ -63,7 +63,7 @@ namespace cs_packages.browsers
         }
 		 public void OpenBusinessPanel(object[] args)
         {
-			KeyManager.block = 5;
+			KeyManager.block = 2;
             BusinesBrowser = new HtmlWindow("package://auth/assets/sellBusiness.html");
             BusinesBrowser.Active = true;
          // //  Chat.Output(args[0].ToString());

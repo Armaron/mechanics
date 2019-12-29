@@ -28,7 +28,7 @@ namespace cs_packages.vehicle
             {
                 InventoryCar = new HtmlWindow("package://auth/assets/carInventory.html");
 
-                KeyManager.block = 13;
+                KeyManager.block = 5;
 
                 InventoryCar.Active = true;
                 // //  Chat.Output(args[0].ToString());
@@ -68,11 +68,13 @@ namespace cs_packages.vehicle
           
 
             KeyManager.block = 0;
-            InventoryCar.Active = false;
-            InventoryCar.Destroy();
-         
-            InventoryCar = null;
-         
+            if (InventoryCar != null)
+            {
+                InventoryCar.Active = false;
+                InventoryCar.Destroy();
+
+                InventoryCar = null;
+            }
             Cursor.Visible = false;
 
 

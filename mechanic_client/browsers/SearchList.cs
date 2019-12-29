@@ -17,12 +17,14 @@ namespace cs_packages.browsers
             Events.Add("OpenSearch", OpenSearch); //наручники
             Events.Add("OpenWeapon", OpenWeapon); //наручники
             Events.Add("OpenGarage", OpenGarage); //наручники
+            Events.Add("OpenGarageMed", OpenGarageMed); //наручники
             Events.Add("OpenEvedence", OpenEvedence); //наручники
             Events.Add("closeProofsMenu", CloseProofsMenu);
             Events.Add("proofsThing", ProofsThing);
             Events.Add("closePoliceAmmunition", CloseProofsMenu);
             Events.Add("LspdUseWeapon", LspdUseWeapon);
             Events.Add("LspdUseGarage", LspdUseGarage);
+            Events.Add("medicalUseGarage", MedicalUseGarage);
             Events.Add("closePoliceGarage", CloseProofsMenu);
             Events.Add("closeEvidenceMenu", CloseProofsMenu);
             Events.Add("evidenceList", EvidenceList);
@@ -43,7 +45,7 @@ namespace cs_packages.browsers
             search.Active = true;
             search.ExecuteJs("pushWardrobe('" + args[0].ToString() + "');");
 
-            KeyManager.block = 13;
+            KeyManager.block = 2;
 
             Cursor.Visible = true;
             Chat.Show(false);
@@ -79,6 +81,19 @@ namespace cs_packages.browsers
 
 
         }
+
+
+        public void MedicalUseGarage(object[] args)
+        {
+            Events.CallRemote("GetCarMedic", args[0].ToString());
+            CloseProofsMenu(null);
+
+
+
+        }
+
+
+
         public void LspdUseGarage(object[] args)
         {
             Events.CallRemote("GetCarPolice", args[0].ToString());
@@ -93,7 +108,7 @@ namespace cs_packages.browsers
             search.Active = true;
             search.ExecuteJs("pushProofs('" + args[0].ToString() + "');");
             text = args[0].ToString();
-            KeyManager.block = 13;
+            KeyManager.block = 2;
 
             Cursor.Visible = true;
             Chat.Show(false);
@@ -107,7 +122,7 @@ namespace cs_packages.browsers
             search.Active = true;
             search.ExecuteJs("pushEvidence('" + args[1].ToString() + "');");
             text = args[1].ToString();
-            KeyManager.block = 13;
+            KeyManager.block = 2;
 
             Cursor.Visible = true;
             Chat.Show(false);
@@ -118,9 +133,22 @@ namespace cs_packages.browsers
         {
             search = new HtmlWindow("package://auth/assets/policeWeapon.html");
             search.Active = true;
-            search.ExecuteJs("pushWeapons('"+ args[0].ToString()+"');");
+            search.ExecuteJs("pushWeapons('"+ args[0].ToString()+"','"+args[1].ToString() +"');");
            
-            KeyManager.block = 13;
+            KeyManager.block = 2;
+
+            Cursor.Visible = true;
+            Chat.Show(false);
+
+
+        }
+        public void OpenGarageMed(object[] args)
+        {
+            search = new HtmlWindow("package://auth/assets/medicalGarage.html");
+            search.Active = true;
+            search.ExecuteJs("pushGarage('" + args[0].ToString() + "');");
+
+            KeyManager.block = 2;
 
             Cursor.Visible = true;
             Chat.Show(false);
@@ -133,7 +161,7 @@ namespace cs_packages.browsers
             search.Active = true;
             search.ExecuteJs("pushGarage('" + args[0].ToString() + "');");
 
-            KeyManager.block = 13;
+            KeyManager.block = 2;
 
             Cursor.Visible = true;
             Chat.Show(false);

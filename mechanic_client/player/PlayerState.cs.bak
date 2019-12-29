@@ -2,7 +2,6 @@
 using RAGE.Ui;
 using System.Linq;
 using cs_packages.client;
-using cs_packages.browsers;
 using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -488,7 +487,7 @@ namespace cs_packages.player
 
         public void InJail(object[] args)
         {
-            KeyManager.block = 99;
+            KeyManager.block = 999;
         }
         public void InJailFalse(object[] args)
         {
@@ -600,11 +599,9 @@ namespace cs_packages.player
         public  void SetFriends(object[] args)
         {
             Friends = JsonConvert.DeserializeObject<List<Friends>>(args[0].ToString());
-            if (args[0] != null)
-            {
-                Phone.AddFriendInContacts(args);
-
-            }
+        //    Chat.Output(Friends.Count.ToString());
+         //   Chat.Output(Friends[0].Name.ToString());
+         //   Chat.Output(Friends[0].ID.ToString());
         }
 
         public void Loaded(object[] args)

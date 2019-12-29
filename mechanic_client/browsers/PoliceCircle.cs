@@ -11,11 +11,11 @@ namespace cs_packages.browsers
 
         public PoliceCircle()
         {
-            Events.Add("putHandcuff", HandCuff); //наручники
+            Events.Add("takeHandcuff", HandCuff); //наручники
             Events.Add("toLead" , ToLead); //за собой
-            Events.Add("pushToAuto", ToAuto); // в авто
+            Events.Add("seatCar", ToAuto); // в авто
 
-            Events.Add("takePrints", TakePrints); //отпечатки
+            Events.Add("takeSearch", TakePrints); //отпечатки
             Events.Add("openItem", OpenItem); //вскрыть
 
             Events.Add("searchEvidence", SearchEvidence); // поиск улик
@@ -36,6 +36,7 @@ namespace cs_packages.browsers
 
         public void HandCuff(object[] args)
         {
+           // Chat.Output("Cuff");
             Events.CallRemote("Cuff");
             OpenClose();
         }

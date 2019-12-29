@@ -1,7 +1,6 @@
 ﻿using cs_packages.client;
 using cs_packages.player;
 using mechanic_client;
-using cs_packages.browsers;
 using RAGE;
 using RAGE.Ui;
 using System.Collections.Generic;
@@ -31,27 +30,21 @@ namespace cs_packages.vehicle
             Events.Add("doDiagnostic", doDiagnostic);
             Events.Add("evacuation", evacuation);
             Events.Add("serviceBook", serviceBook);
-            Events.Add("Phone_cef_up", Phone_cef_up);//сел в машину (цефку вверх)
-            Events.Add("Phone_cef_down", Phone_cef_down);//вышел из машины (цефку вниз)
 
         }
 
         private void evacuation(object[] args)
         {
             Mechanic_Client.Tow();
-            OpenCarMenu(null);
-
         }
 
         private void serviceBook(object[] args)
         {
             Mechanic_Client.OpenServiceBook();
-            OpenCarMenu(null);
         }
         private void doDiagnostic(object[] args)
         {
             Mechanic_Client.ActiveDiagMech(null);
-            OpenCarMenu(null);
         }
         public void LeaveVehicle()
         {
@@ -161,11 +154,7 @@ namespace cs_packages.vehicle
         public static void OpenCarMenu(object[] args)
         {
             //Chat.Output("FindCar1");
-            string fraction = "Mechanical";
-            if (args != null)
-            {
-                fraction = args[1].ToString();
-            }
+
             if (args == null)
             {
                 CarMenu.Active = false;
@@ -188,10 +177,8 @@ namespace cs_packages.vehicle
             if (CarMenu == null)
             {
                 CarMenu = new HtmlWindow("package://auth/assets/carCircle.html");
-                CarMenu.ExecuteJs("initCarCircle('"+ args[0].ToString().ToLower() + "');");
-                fraction = "Mechanical";
-                CarMenu.ExecuteJs("addFractionCircle('" + fraction + "');");
-                KeyManager.block = 5;
+
+                KeyManager.block = 13;
 
                 CarMenu.Active = true;
                 //   Chat.Output(args[0].ToString());
@@ -199,7 +186,7 @@ namespace cs_packages.vehicle
 
 
                 Cursor.Visible = true;
-              //  Chat.Show(false);
+                Chat.Show(false);
             }
 
             else
@@ -300,19 +287,6 @@ namespace cs_packages.vehicle
 
 
 
-        }
-        public void Phone_cef_up(object[] args)
-        {
-            Phone.Phone_cef_up(args);
-        }
-        public void Phone_cef_down(object[] args)
-        {
-            Phone.Phone_cef_down(args);
-            if (AutoSchool.player_on_exam)
-            {
-                AutoSchool stop_exam = new AutoSchool();
-                stop_exam.StopExam(null);
-            }
         }
     }
 }

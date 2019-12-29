@@ -25,7 +25,7 @@ namespace cs_packages.browsers
         public void Open(object[] args)
         {
 
-            KeyManager.block = 5;
+            KeyManager.block = 2;
             SellPointBrowser = new HtmlWindow("package://auth/assets/sellPoint.html");
             SellPointBrowser.Active = true;
          // //  Chat.Output(args[0].ToString());

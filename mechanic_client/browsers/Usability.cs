@@ -20,7 +20,7 @@ namespace cs_packages.browsers
 
             Events.Add("takePassport", TakePassport);
             Events.Add("takeSearch", TakeSearch);
-            Events.Add("takeHandcuff", TakeHandcuff);
+           // Events.Add("takeHandcuff", TakeHandcuff);
 
             Events.Add("giveKeys", GiveKeys);
 
@@ -34,8 +34,14 @@ namespace cs_packages.browsers
             Events.Add("showMedicalCard", ShowMedicalCard);
             Events.Add("watchPatient", WatchPatient);
 
+            Events.Add("reanimation", Reanimation);
             //   Events.Add("repair", Repair);
 
+        }
+        public void Reanimation(object[] args)
+        {
+            Events.CallRemote("ReanimationServer");
+            OpenUsability(null);
         }
         public void ShowMedicalCard(object[] args)
         {
@@ -60,7 +66,7 @@ namespace cs_packages.browsers
 
             if (UsabilityBrowser == null)
             {
-                KeyManager.block = 12;
+                KeyManager.block = 6;
 
 
                 //var Elem1 = new { id = "takeHandcuff", status = "hide" };
@@ -71,7 +77,8 @@ namespace cs_packages.browsers
 
                 UsabilityBrowser = new HtmlWindow("package://auth/assets/newCircle.html");
 
-                UsabilityBrowser.ExecuteJs("initPlayerCircle('" + args[0].ToString().ToLower() + "','"+ args[1].ToString().ToLower() + "','"+ args[2].ToString().ToLower() + "','" + args[3].ToString().ToLower() + "');");
+                UsabilityBrowser.ExecuteJs("initPlayerCircle('" + args[0].ToString().ToLower() + "','"+ args[1].ToString().ToLower() + "','"+ args[3].ToString().ToLower() + "','" + args[3].ToString().ToLower() + "');");
+                Chat.Output("initPlayerCircle('" + args[0].ToString().ToLower() + "','" + args[1].ToString().ToLower() + "','" + args[3].ToString().ToLower() + "','" + args[3].ToString().ToLower() + "');");
                 string fraction = args[4].ToString();
                 if(fraction!="")
                 {
@@ -90,7 +97,7 @@ namespace cs_packages.browsers
                 KeyManager.block = 0;
 
                 UsabilityBrowser.Active = false;
-
+                UsabilityBrowser.Destroy();
                 UsabilityBrowser = null;
 
 
@@ -118,7 +125,7 @@ namespace cs_packages.browsers
             //"; rank - " + args[9] + ";");
 
 
-            KeyManager.block = 12;
+            KeyManager.block = 6;
             UsabilityBrowser = new HtmlWindow("package://auth/assets/passport.html");
 
             UsabilityBrowser.ExecuteJs("menu.pass = {name:'" + args[0].ToString() +
