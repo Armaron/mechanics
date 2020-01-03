@@ -203,7 +203,8 @@ namespace mechanics
         public void ServiceBook(Client client, object[] args)
         {
 
-            VehicleDetails v = Mechanic.LoadServiceRecord(client, args[0].ToString(), "1231231");
+            Vehicle veh = (Vehicle)args[0];
+            VehicleDetails v = Mechanic.LoadServiceRecord(client, veh.NumberPlate, "1231231");
 
             // NAPI.Chat.SendChatMessageToAll(v.TotalHealth.ToString());
 
@@ -317,8 +318,7 @@ namespace mechanics
         public void Сustom(Client client, object[] args)
         {
 
-            NAPI.Chat.SendChatMessageToAll(args[2].ToString());
-
+          
             Vehicle veh = (Vehicle)args[2];
             veh.SetMod(Convert.ToInt32(args[0]), Convert.ToInt32(args[1]));
         }

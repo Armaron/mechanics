@@ -15,12 +15,12 @@ namespace cs_packages.browsers
             Events.Add("toLead" , ToLead); //за собой
             Events.Add("seatCar", ToAuto); // в авто
 
-            Events.Add("takeSearch", TakePrints); //отпечатки
+            Events.Add("searchEvidence", TakePrints); //отпечатки
             Events.Add("openItem", OpenItem); //вскрыть
 
-            Events.Add("searchEvidence", SearchEvidence); // поиск улик
+        //    Events.Add("searchEvidence", SearchEvidence); // поиск улик
             Events.Add("barrier", Barrier); // ограждение
-            Events.Add("search", EvidenceList);
+            Events.Add("takeSearch", EvidenceList);
             Events.Add("closeEvidenceMenu", CloseEvidenceMenu);
             Events.Add("openEvidenceMenu", OpenEvidenceMenu);
 

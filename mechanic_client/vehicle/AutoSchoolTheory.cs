@@ -34,29 +34,33 @@ namespace cs_packages.vehicle
                 if(args[0].ToString() == "A")
                 {
                     Chat.Output("MOTO");
-                    Events.CallRemote("StartPract_A");
                     CloseAutoSchool(null);
+                    Events.CallRemote("StartPract_A");
+                    
                     return;
                 }
                 if (args[0].ToString() == "B")
                 {
                     Chat.Output("AUTO");
-                    Events.CallRemote("StartPract_B");
                     CloseAutoSchool(null);
+                    Events.CallRemote("StartPract_B");
+                   
                     return;
                 }
                 if (args[0].ToString() == "C")
                 {
                     Chat.Output("C-category");
-                    Events.CallRemote("StartPract_C");
                     CloseAutoSchool(null);
+                    Events.CallRemote("StartPract_C");
+                   
                     return;
                 }
                 if (args[0].ToString() == "D")
                 {
                     Chat.Output("D-category");
-                    Events.CallRemote("StartPract_D");
                     CloseAutoSchool(null);
+                    Events.CallRemote("StartPract_D");
+                   
                     return;
                 }
                 

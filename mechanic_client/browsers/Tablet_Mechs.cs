@@ -73,8 +73,11 @@ namespace mechanic_client
 
 
         public static string jsonBuis = ""; //++
-        public static Mech_Org mechBuis = new Mech_Org();    
+        public static Mech_Org mechBuis = new Mech_Org();    //++
+                                                             //static public HtmlWindow cs_packages.browsers.Tablet.phone = null;
 
+
+        // private static HtmlWindow phone = nu;
 
         public static void LoadBuisnessPage(object[] args)//++
         {
@@ -182,35 +185,40 @@ namespace mechanic_client
         {
             if (Player.LocalPlayer.GetSharedData("mechBuisness") != null)
             {
-                if (cs_packages.browsers.Tablet.phone == null)
+                // if (Player.LocalPlayer.GetSharedData("Fraction").ToString() == "mechs")
+                // {
                 {
-
-
-                    //Chat.Output(Player.LocalPlayer.GetSharedData("Fraction").ToString());
-                    //  RAGE.Elements.Player.LocalPlayer.TaskUseMobilePhoneTimed(100);
-                    //Tablet
-                    cs_packages.browsers.Tablet.phone = new HtmlWindow("package://auth/assets/tablet.html");
-                    KeyManager.block = 10;
-                    Events.CallRemote("Load_Buisness");//++
-                    cs_packages.browsers.Tablet.phone.Active = true;
-                    Cursor.Visible = true;
-
-                }
-                else
-                {
-                    KeyManager.block = 0;
-                    Chat.Show(true);
-
-                    cs_packages.browsers.Tablet.phone.Active = false;
-                    Cursor.Visible = false;
-
-                    cs_packages.browsers.Tablet.phone = null;
-                    if (RAGE.Elements.Player.LocalPlayer.Vehicle == null)
+                    if (cs_packages.browsers.Tablet.phone == null)
                     {
-                        Events.CallLocal("freezestop");
-                        Events.CallRemote("stopAnimationPD");//  client.TriggerEvent("freeze");
-                    }
 
+
+                        //Chat.Output(Player.LocalPlayer.GetSharedData("Fraction").ToString());
+                        //  RAGE.Elements.Player.LocalPlayer.TaskUseMobilePhoneTimed(100);
+                        //Tablet
+                        cs_packages.browsers.Tablet.phone = new HtmlWindow("package://auth/assets/tablet.html");
+                        KeyManager.block = 10;
+                        Events.CallRemote("Load_Buisness");//++
+                        cs_packages.browsers.Tablet.phone.Active = true;
+                        Cursor.Visible = true;
+
+                    }
+                    else
+                    {
+                        KeyManager.block = 0;
+                        Chat.Show(true);
+
+                        cs_packages.browsers.Tablet.phone.Active = false;
+                        Cursor.Visible = false;
+
+                        cs_packages.browsers.Tablet.phone = null;
+                        if (RAGE.Elements.Player.LocalPlayer.Vehicle == null)
+                        {
+                            Events.CallLocal("freezestop");
+                            Events.CallRemote("stopAnimationPD");//  client.TriggerEvent("freeze");
+                        }
+
+                    }
+                    //}
                 }
             }
         }

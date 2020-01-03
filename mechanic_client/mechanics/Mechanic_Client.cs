@@ -354,7 +354,18 @@ namespace mechanic_client
             // Chat.Output(args[5].ToString());
             string date = args[4].ToString();
             date = date.Replace("@", "");
-            VehicleDetailsCl vehdet = new VehicleDetailsCl(args[0].ToString(), args[1].ToString(), args[2].ToString(), (int)args[3], date, args[5].ToString());
+            VehicleDetailsCl vehdet = null;
+           // if (args[2] == null)
+           // {
+           //    
+           //     
+           //     vehdet = new VehicleDetailsCl(args[0].ToString(), args[1].ToString(), RAGE.Game.Vehicle.GetDisplayNameFromVehicleModel(RAGE.Game.Entity.GetEntityModel(GetVehicle(5.0f))).ToLowerInvariant(), (int)args[3], date, args[5].ToString());
+           // }
+           // else
+           // {
+                vehdet = new VehicleDetailsCl(args[0].ToString(), args[1].ToString(), args[2].ToString(), (int)args[3], date, args[5].ToString());
+           // }
+            
             serviceBook = new HtmlWindow("package://auth/assets/service-book.html");
             string json = JsonConvert.SerializeObject(vehdet);
             serviceBook.ExecuteJs($"pushServiceBook('{json}')");
@@ -482,10 +493,10 @@ namespace mechanic_client
         public static void OpenServiceBook()
         {
             int veh = GetVehicle(5.0f);
+            List<Vehicle> vehicles = Entities.Vehicles.All;
+            Vehicle veh_obj = vehicles.Find(pl => pl.Handle == veh);
 
-            string plate = RAGE.Game.Vehicle.GetVehicleNumberPlateText(veh);
-            plate = plate.Replace(" ", "");
-            Events.CallRemote("ServiceBook", plate);
+            Events.CallRemote("ServiceBook", veh_obj);
 
         }
 
@@ -1099,6 +1110,18 @@ namespace mechanic_client
             }
         }
 
+
+        public static void OpenBuisBuy()
+        {
+
+            foreach (var item in Ticks_Mechs.CustomsCords)
+            {
+                if (RAGE.Game.Utils.Vdist(item.BuyCustomsCoords.X, item.BuyCustomsCoords.Y, item.BuyCustomsCoords.Z, Player.LocalPlayer.Position.X, Player.LocalPlayer.Position.Y, Player.LocalPlayer.Position.Z) <= 1.0f && Math.Abs(Player.LocalPlayer.Position.Z - item.BuyCustomsCoords.Z) <= 1.0f)
+                { 
+                        Mechanic_Client.OpenBuyBuis(item.NameStatic);
+                }
+            }
+        }
 
         private void SyncDetch(object[] args)
         {

@@ -162,8 +162,10 @@ namespace cs_packages.browsers
             int count = Convert.ToInt32(args[0]);
 
             Events.CallRemote("GiveMoney_Server", count);
-
-            OpenUsability(null);
+            if (UsabilityBrowser != null)
+            {
+                OpenUsability(null);
+            }
         }
         public void ShowPassport(object[] args)
         {

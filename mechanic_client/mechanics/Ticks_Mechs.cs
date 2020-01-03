@@ -176,7 +176,7 @@ namespace mechanic_client
                                 if (RAGE.Game.Utils.Vdist(item.RepairCoords.X, item.RepairCoords.Y, item.RepairCoords.Z, pos.X, pos.Y, pos.Z) <= 10.0f && Math.Abs(pos.Z - item.RepairCoords.Z) <= 5.0f && Player.LocalPlayer.GetSharedData("typeCustoms").ToString() == item.NameCustoms)
                                 {
                                     //onCoods = true;
-                                    if (!openRepair) { Mechanic_Client.Notif("~y~Начать починку " + RAGE.Game.Vehicle.GetDisplayNameFromVehicleModel(modelVeh) + " ~g~[ENTER]"); targetVeh = veh; }
+                                    if (!openRepair) { Mechanic_Client.Notif("~y~Начать починку " + RAGE.Game.Vehicle.GetDisplayNameFromVehicleModel(modelVeh) + " ~g~[E]"); targetVeh = veh; }
 
                                     if (/*RAGE.Game.Pad.IsControlPressed(0, 18) &&*/ /*RAGE.Game.Vehicle.IsVehicleSeatFree(veh, -1, 0) ||*/ openRepair)
                                     {
@@ -280,7 +280,7 @@ namespace mechanic_client
                                             if (RAGE.Game.Vehicle.GetVehicleBodyHealth(targetVeh) <= 500)
                                             {
 
-                                                Text = Text + "@Капитальная ремонт кузова@";
+                                                Text = Text + "@Капитальный ремонт кузова@";
                                             }
                                             Mechanic_Client.FixBody(targetVeh, 1000, (int)RAGE.Game.Vehicle.GetVehicleBodyHealth(targetVeh), TotalBodyHealth, TotalMaxBodyHealth);
 

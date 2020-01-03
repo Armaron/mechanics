@@ -5,6 +5,7 @@ using cs_packages.browsers;
 using RAGE;
 using RAGE.Ui;
 using System.Collections.Generic;
+using System;
 
 namespace cs_packages.vehicle
 {
@@ -30,10 +31,17 @@ namespace cs_packages.vehicle
             Events.Add("kickAway", KickAway);
             Events.Add("doDiagnostic", doDiagnostic);
             Events.Add("evacuation", evacuation);
+            Events.Add("reverseCar", reverseCar);
             Events.Add("serviceBook", serviceBook);
             Events.Add("Phone_cef_up", Phone_cef_up);//сел в машину (цефку вверх)
             Events.Add("Phone_cef_down", Phone_cef_down);//вышел из машины (цефку вниз)
 
+        }
+
+        private void reverseCar(object[] args)
+        {
+            Mechanic_Client.PlaceVehOnGround();
+            OpenCarMenu(null);
         }
 
         private void evacuation(object[] args)

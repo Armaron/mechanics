@@ -424,11 +424,6 @@ namespace cs_packages.browsers
                 return;
             }
 
-            if (colshape.GetSharedData("repapairCords") != null)
-            {
-                mechanic_client.Ticks_Mechs.onCoods = false;
-            }
-
         }
 
         /// <summary>
@@ -439,20 +434,7 @@ namespace cs_packages.browsers
         public static void DeliteBlipAndColshape(Colshape colshape, CancelEventArgs cancel)
         {
 
-            //Chat.Output("ENTER COLSHAPE");//////DEBUG   
-            try
-            {
-                if (colshape.GetSharedData("nameBuis") != null) {
-
-                    //Chat.Output(colshape.GetSharedData("nameBuis").ToString());
-                    mechanic_client.Mechanic_Client.OpenBuyBuis(colshape.GetSharedData("nameBuis").ToString());
-                }
-                // mechanic_client.Mechanic_Client.onMarker = true;
-            }
-            catch
-            {
-
-            }
+            //Chat.Output("ENTER COLSHAPE");//////DEBUG       
             try
             {
                 if (colshape.GetSharedData("repapairCords") != null)

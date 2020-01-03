@@ -92,10 +92,9 @@ namespace cs_packages.client
         static KeyManager()
         {
             Events.Add("KeyIpress", KeyIPress);
+            Events.Add("KeyOpress", KeyOPress);
             Events.Add("KeyJpress", KeyJPress);
             Events.Add("KeyF3press", KeyF3press);
-            Events.Add("KeyIpress", KeyIPress);
-            Events.Add("KeyOpress", KeyOPress);
             Events.Add("KeyLpress", KeyLPress);
             Events.Add("KeyKpress", KeyKPress);
             //  Events.Add("KeyJpress", KeyJPress);
@@ -116,7 +115,7 @@ namespace cs_packages.client
 
         }
 
-        private static void KeyF3press(object[] args)
+         private static void KeyF3press(object[] args)
         {
             Action act = () =>
             {
@@ -138,7 +137,7 @@ namespace cs_packages.client
             KeyBind(act);
         }
 
-        private static void KeyJPress(object[] args)
+         private static void KeyJPress(object[] args)
         {
 
             Action act = () =>
@@ -174,7 +173,6 @@ namespace cs_packages.client
             KeyBind(act);
         }
 
-
         public static void KeyGpress(object[] args)
         {
             Action act = () =>
@@ -200,9 +198,7 @@ namespace cs_packages.client
 
         public static void KeyKPress(object[] args)
         {
-
-
-
+          
 
             Action act = () =>
             {
@@ -275,7 +271,7 @@ namespace cs_packages.client
             KeyBind(act);
         }
 
-
+            
         public static void KeyCtrlpress(object[] args)
         {
             Action act = () =>
@@ -363,15 +359,16 @@ namespace cs_packages.client
                     {
                         Events.CallRemote("NotifyClient");
                     }
-
                 if (mechanic_client.Ticks_Mechs.openRepair || mechanic_client.Mechanic_Client.ActiveDiag || mechanic_client.Mechanic_Client.ActiveRepairKitCitizen)
                 {
                     mechanic_client.Ticks_Mechs.keyfixBody = true;
                 }
-
             };
 
             KeyBind(act);
+
+
+
 
 
 
@@ -652,7 +649,9 @@ namespace cs_packages.client
                     //browsers.Phone.OpenClose();
                     Events.CallRemote("MoveToMarker");
 
-                    if (mechanic_client.Ticks_Mechs.onCoods && RAGE.Game.Vehicle.IsVehicleSeatFree(mechanic_client.Ticks_Mechs.veh, -1, 0))
+                };
+
+                 if (mechanic_client.Ticks_Mechs.onCoods && RAGE.Game.Vehicle.IsVehicleSeatFree(mechanic_client.Ticks_Mechs.veh, -1, 0))
                     {
                         mechanic_client.Ticks_Mechs.openRepair = true;
                     }
@@ -662,8 +661,8 @@ namespace cs_packages.client
                     {
                         mechanic_client.Ticks_Mechs.keyfixWheel = true;
                     }
+                    mechanic_client.Mechanic_Client.OpenBuisBuy();
 
-                };
 
                 KeyBind(act);
 
@@ -699,12 +698,19 @@ namespace cs_packages.client
         {
 
 
-            if (block == 0)
+            if (block == 0 )
             {
                 Action act = () =>
                 {
                     DrawInfo.LoadScreen = true;
-                    Events.CallRemote("getinventary.server");
+                    if (player != null)
+                    {
+                        Events.CallRemote("getinventary.server", player.GetSharedData("ClientID"));
+                    }
+                    else
+                    {
+                        Events.CallRemote("getinventary.server", -1);
+                    }
 
 
                 };
