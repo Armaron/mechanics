@@ -130,7 +130,7 @@ namespace mechanic_client
 
         private void HireMechanical(object[] args)//++
         {
-            Chat.Output(args[0].ToString());
+           // Chat.Output(args[0].ToString());
             if (args[0] != null)
             {
 

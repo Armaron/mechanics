@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(OutDir)*&quot; &quot;C:\rage_dev\server-files\bridge\resources\Serv_RP\*.*&quot; /Q /D /Y" />
+  </Target>
+
+  <ItemGroup>
+    <Reference Include="Bootstrapper">
+      <HintPath>..\..\bridge\resources\Serv_RP\Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ServRP">
+      <HintPath>..\..\bridge\resources\Serv_RP\ServRP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

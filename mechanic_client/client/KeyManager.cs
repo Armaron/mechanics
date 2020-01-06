@@ -240,9 +240,13 @@ namespace cs_packages.client
                 {
                     index_b = RAGE.Game.Entity.GetEntityBoneIndexByName(veh, "exhaust");
                 }
+                if (index_b == -1)
+                {
+                    index_b = RAGE.Game.Entity.GetEntityBoneIndexByName(veh, "bodyshell");
+                }
                 coords_b = RAGE.Game.Entity.GetWorldPositionOfEntityBone(veh, index_b);
 
-                if (RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_d.X, coords_d.Y, coords_d.Z) <= 1.5f && RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_d.X, coords_d.Y, coords_d.Z) < RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_b.X, coords_b.Y, coords_b.Z)  /*||  RAGE.Game.Vehicle.IsThisModelABike(modelVeh) || RAGE.Game.Vehicle.IsThisModelAQuadbike(modelVeh) || RAGE.Game.Vehicle.IsThisModelABicycle(modelVeh)|| RAGE.Game.Vehicle.IsThisModelABoat(modelVeh)*/)
+                if (RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_d.X, coords_d.Y, coords_d.Z) <= 2.5f && RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_d.X, coords_d.Y, coords_d.Z) < RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_b.X, coords_b.Y, coords_b.Z)  /*||  RAGE.Game.Vehicle.IsThisModelABike(modelVeh) || RAGE.Game.Vehicle.IsThisModelAQuadbike(modelVeh) || RAGE.Game.Vehicle.IsThisModelABicycle(modelVeh)|| RAGE.Game.Vehicle.IsThisModelABoat(modelVeh)*/)
                 {
 
                     if (block == 13 || block == 0 || block == 1)
@@ -253,7 +257,7 @@ namespace cs_packages.client
                 }
 
 
-                if (RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_b.X, coords_b.Y, coords_b.Z) <= 1.5f && RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_d.X, coords_d.Y, coords_d.Z) > RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_b.X, coords_b.Y, coords_b.Z))
+                if (RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_b.X, coords_b.Y, coords_b.Z) <= 2.5f && RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_d.X, coords_d.Y, coords_d.Z) > RAGE.Game.Utils.Vdist(pos.X, pos.Y, pos.Z, coords_b.X, coords_b.Y, coords_b.Z))
                 {
                     if (block == 0)
                     {
