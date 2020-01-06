@@ -73,7 +73,7 @@ namespace mechanics
         }
 
 
-        public static void LoadAllBusiness(List<TransComp_buis> trans_buis)
+        public static void LoadAllBusinessTransCo(List<TransComp_buis> trans_buis)
         {
 
             if (transcomp_buisness.Count != 0)
